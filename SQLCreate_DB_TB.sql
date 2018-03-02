@@ -38,15 +38,16 @@ CREATE TABLE dbo.Register
 ----Nhan vien ---
 CREATE TABLE dbo.Profile
 (
-	ProfileID INT PRIMARY KEY,
+	ProfileID int IDENTITY(1,1) PRIMARY KEY,
 	ProfileName NVARCHAR(200),
+	CodeEmp NVARCHAR(200),
 	DateBrith DATE,
 	StatusHire VARCHAR(50),
 );
 ----dieu kien tuyen---
 CREATE TABLE dbo.JobCondition
 (
-	JobConditionID INT PRIMARY KEY,
+	JobConditionID INT  IDENTITY(1,1) PRIMARY KEY,
 	JobConditionName NVARCHAR(100),
 	Value1 VARCHAR(10),
 	Value2 INT 
@@ -54,7 +55,7 @@ CREATE TABLE dbo.JobCondition
 ----yeu cau tuyen dung----
 CREATE TABLE dbo.JobVancany
 (
-	JobVancanyID INT PRIMARY KEY,
+	JobVancanyID INT IDENTITY(1,1) PRIMARY KEY,
 	JobVancanyName NVARCHAR(100),
 	DateStart DATE,
 	DateEnd DATE,
@@ -66,8 +67,9 @@ CREATE TABLE dbo.JobVancany
 -----Ho so ung vien----
 CREATE TABLE dbo.Candidate
 (
-	CandidateID VARCHAR(50) PRIMARY KEY,
+	CandidateID INT IDENTITY(1,1) PRIMARY KEY,
 	CandidateName NVARCHAR(200),
+	CodeCandidate VARCHAR(50),
 	DateBirthday DATE,
 	Genth NVARCHAR(10),
 	Phone NVARCHAR(500),
@@ -81,19 +83,19 @@ CREATE TABLE dbo.Candidate
 ----Lịch sử tuyển dụng----
 CREATE	TABLE dbo.Rec_RecruitmentHistory
 (
-	RecruitmentHistoryID INT PRIMARY KEY,
+	RecruitmentHistoryID Int IDENTITY(1,1) PRIMARY KEY,
 	CandidateName NVARCHAR(200),
 	Gender VARCHAR(50),
 	LevelInterview INT,
 	JobVancanyID INT,
-	CandidateID VARCHAR(50),
+	CandidateID INT,
 	FOREIGN KEY (JobVancanyID) REFERENCES dbo.JobVancany(JobVancanyID),
 	FOREIGN KEY (CandidateID) REFERENCES dbo.Candidate(CandidateID)
 );
 ----ke hoach/hen cho phong van----
 CREATE TABLE dbo.InterviewCampaign
 (
-	InterviewCampaignID INT PRIMARY KEY,
+	InterviewCampaignID INT IDENTITY(1,1) PRIMARY KEY,
 	InterviewCampaignName NVARCHAR(100),
 	DateInterview DATE,
 	HourInterview NVARCHAR(100),
@@ -103,8 +105,8 @@ CREATE TABLE dbo.InterviewCampaign
 ---Ke hoach/hen phong van chi tiet----
 CREATE TABLE dbo.InterviewCampaignDetail
 (
-	InterviewCampaignDetailID INT PRIMARY KEY,
-	CandidateID VARCHAR(50),
+	InterviewCampaignDetailID INT IDENTITY(1,1) PRIMARY KEY,
+	CandidateID INT,
 	InterviewCampaignID INT,
 	DateInterview DATE,
 	HourInterview NVARCHAR(100),
@@ -116,9 +118,9 @@ CREATE TABLE dbo.InterviewCampaignDetail
 ----phong van----
 CREATE TABLE dbo.Interview
 (
-	InterviewID INT PRIMARY KEY,
+	InterviewID INT IDENTITY(1,1) PRIMARY KEY,
 	InterviewName NVARCHAR(200),
-	CandidateID VARCHAR(50),
+	CandidateID INT,
 	DateInterview DATE,
 	StatusInterview VARCHAR(50),
 	InterviewCampaignID INT,
