@@ -1,6 +1,14 @@
 ﻿----===Create Database===----
 USE master
 GO
+-- Drop the database if it already exists
+IF  EXISTS (
+	SELECT name 
+		FROM sys.databases 
+		WHERE name = N'QLTD'
+)
+DROP DATABASE QLTD
+GO
 CREATE DATABASE QLTD
 GO
 
@@ -11,20 +19,22 @@ GO
 ----dang ky---
 CREATE TABLE dbo.Register
 (
-	UserID VARCHAR(10) PRIMARY KEY,
+	UserID int IDENTITY(1,1) PRIMARY KEY,
 	Ho NVARCHAR(100),
 	Ten NVARCHAR(50),
 	Username NVARCHAR(150),
 	Password VARCHAR(50)
 );
-----dang nhap---
-CREATE TABLE dbo.Account
-(
-	Username NVARCHAR(150)PRIMARY KEY,
-	Password VARCHAR(50),
-	UserID VARCHAR(10),
-	FOREIGN KEY (UserID) REFERENCES dbo.Register(UserID)
-);
+
+-----====DELETE dbo.Account====----
+------dang nhap---
+--CREATE TABLE dbo.Account
+--(
+--	Username NVARCHAR(150)PRIMARY KEY,
+--	Password VARCHAR(50),
+--	UserID int,
+--	FOREIGN KEY (UserID) REFERENCES dbo.Register(UserID)
+--);
 ----Nhan vien ---
 CREATE TABLE dbo.Profile
 (
