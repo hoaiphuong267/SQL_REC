@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Tuyendung
 {
-    public partial class Menu : Form
+    public partial class Candidate : Form
     {
-        public Menu()
+        public Candidate()
         {
             InitializeComponent();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

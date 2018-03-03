@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bt_Candidate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.bt_InterviewCampaign = new System.Windows.Forms.Button();
-            this.bt_Interview = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.bt_Interview = new System.Windows.Forms.Button();
+            this.bt_InterviewCampaign = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bt_Candidate = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,6 +54,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1276, 152);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(273, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1000, 65);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Chương Trình Quản lý Quy Trình Tuyển Dụng";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -78,44 +89,18 @@
             this.panel2.Size = new System.Drawing.Size(273, 501);
             this.panel2.TabIndex = 1;
             // 
-            // bt_Candidate
+            // button4
             // 
-            this.bt_Candidate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Candidate.BackgroundImage")));
-            this.bt_Candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Candidate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Candidate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bt_Candidate.Location = new System.Drawing.Point(28, 107);
-            this.bt_Candidate.Name = "bt_Candidate";
-            this.bt_Candidate.Size = new System.Drawing.Size(227, 65);
-            this.bt_Candidate.TabIndex = 2;
-            this.bt_Candidate.Text = "Hồ sơ ứng viên";
-            this.bt_Candidate.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(28, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 65);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Yêu cầu Tuyển dụng";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // bt_InterviewCampaign
-            // 
-            this.bt_InterviewCampaign.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_InterviewCampaign.BackgroundImage")));
-            this.bt_InterviewCampaign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_InterviewCampaign.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_InterviewCampaign.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bt_InterviewCampaign.Location = new System.Drawing.Point(28, 178);
-            this.bt_InterviewCampaign.Name = "bt_InterviewCampaign";
-            this.bt_InterviewCampaign.Size = new System.Drawing.Size(227, 65);
-            this.bt_InterviewCampaign.TabIndex = 2;
-            this.bt_InterviewCampaign.Text = "Chờ lịch phỏng vấn";
-            this.bt_InterviewCampaign.UseVisualStyleBackColor = true;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button4.Location = new System.Drawing.Point(28, 320);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(227, 65);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Hồ sơ trúng tuyển";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // bt_Interview
             // 
@@ -130,26 +115,44 @@
             this.bt_Interview.Text = "Phỏng vấn";
             this.bt_Interview.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bt_InterviewCampaign
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button4.Location = new System.Drawing.Point(28, 320);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(227, 65);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Hồ sơ trúng tuyển";
-            this.button4.UseVisualStyleBackColor = true;
+            this.bt_InterviewCampaign.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_InterviewCampaign.BackgroundImage")));
+            this.bt_InterviewCampaign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_InterviewCampaign.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_InterviewCampaign.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bt_InterviewCampaign.Location = new System.Drawing.Point(28, 178);
+            this.bt_InterviewCampaign.Name = "bt_InterviewCampaign";
+            this.bt_InterviewCampaign.Size = new System.Drawing.Size(227, 65);
+            this.bt_InterviewCampaign.TabIndex = 2;
+            this.bt_InterviewCampaign.Text = "Chờ lịch phỏng vấn";
+            this.bt_InterviewCampaign.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button1
             // 
-            this.label1.Location = new System.Drawing.Point(439, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(690, 65);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(28, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(227, 65);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Yêu cầu Tuyển dụng";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // bt_Candidate
+            // 
+            this.bt_Candidate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Candidate.BackgroundImage")));
+            this.bt_Candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Candidate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Candidate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bt_Candidate.Location = new System.Drawing.Point(28, 107);
+            this.bt_Candidate.Name = "bt_Candidate";
+            this.bt_Candidate.Size = new System.Drawing.Size(227, 65);
+            this.bt_Candidate.TabIndex = 2;
+            this.bt_Candidate.Text = "Hồ sơ ứng viên";
+            this.bt_Candidate.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 

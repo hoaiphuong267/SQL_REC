@@ -47,8 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Candidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Candidate.Designer.cs">
+      <DependentUpon>Candidate.cs</DependentUpon>
+    </Compile>
     <Compile Include="General\Employee.cs" />
     <Compile Include="General\UserLogin.cs" />
+    <Compile Include="JobVancany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobVancany.Designer.cs">
+      <DependentUpon>JobVancany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Candidate.resx">
+      <DependentUpon>Candidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobVancany.resx">
+      <DependentUpon>JobVancany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
