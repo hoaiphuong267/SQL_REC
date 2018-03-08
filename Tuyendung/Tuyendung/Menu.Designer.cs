@@ -28,79 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnHosotrungtuyen = new System.Windows.Forms.Button();
             this.bt_Interview = new System.Windows.Forms.Button();
             this.bt_InterviewCampaign = new System.Windows.Forms.Button();
-            this.bu = new System.Windows.Forms.Button();
+            this.btnJobVancany = new System.Windows.Forms.Button();
             this.bt_Candidate = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabJobVancacy = new System.Windows.Forms.TabPage();
+            this.tabCandidate = new System.Windows.Forms.TabPage();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1276, 152);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(273, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1000, 65);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Chương Trình Quản lý Tuyển Dụng";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.btnHosotrungtuyen);
             this.panel2.Controls.Add(this.bt_Interview);
             this.panel2.Controls.Add(this.bt_InterviewCampaign);
-            this.panel2.Controls.Add(this.bu);
+            this.panel2.Controls.Add(this.btnJobVancany);
             this.panel2.Controls.Add(this.bt_Candidate);
-            this.panel2.Location = new System.Drawing.Point(-1, 144);
+            this.panel2.Location = new System.Drawing.Point(1, 131);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(273, 501);
+            this.panel2.Size = new System.Drawing.Size(273, 503);
             this.panel2.TabIndex = 1;
             // 
-            // button4
+            // btnHosotrungtuyen
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button4.Location = new System.Drawing.Point(28, 320);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(227, 65);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Hồ sơ trúng tuyển";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnHosotrungtuyen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHosotrungtuyen.BackgroundImage")));
+            this.btnHosotrungtuyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHosotrungtuyen.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHosotrungtuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnHosotrungtuyen.Location = new System.Drawing.Point(28, 320);
+            this.btnHosotrungtuyen.Name = "btnHosotrungtuyen";
+            this.btnHosotrungtuyen.Size = new System.Drawing.Size(227, 65);
+            this.btnHosotrungtuyen.TabIndex = 2;
+            this.btnHosotrungtuyen.Text = "Hồ sơ trúng tuyển";
+            this.btnHosotrungtuyen.UseVisualStyleBackColor = true;
+            this.btnHosotrungtuyen.Click += new System.EventHandler(this.btnHosotrungtuyen_Click);
             // 
             // bt_Interview
             // 
@@ -128,18 +102,19 @@
             this.bt_InterviewCampaign.Text = "Chờ lịch phỏng vấn";
             this.bt_InterviewCampaign.UseVisualStyleBackColor = true;
             // 
-            // bu
+            // btnJobVancany
             // 
-            this.bu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bu.BackgroundImage")));
-            this.bu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bu.Location = new System.Drawing.Point(28, 36);
-            this.bu.Name = "bu";
-            this.bu.Size = new System.Drawing.Size(227, 65);
-            this.bu.TabIndex = 2;
-            this.bu.Text = "Yêu cầu Tuyển dụng";
-            this.bu.UseVisualStyleBackColor = true;
+            this.btnJobVancany.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnJobVancany.BackgroundImage")));
+            this.btnJobVancany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnJobVancany.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJobVancany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnJobVancany.Location = new System.Drawing.Point(28, 36);
+            this.btnJobVancany.Name = "btnJobVancany";
+            this.btnJobVancany.Size = new System.Drawing.Size(227, 65);
+            this.btnJobVancany.TabIndex = 2;
+            this.btnJobVancany.Text = "Yêu cầu Tuyển dụng";
+            this.btnJobVancany.UseVisualStyleBackColor = true;
+            this.btnJobVancany.Click += new System.EventHandler(this.btnJobVancany_Click);
             // 
             // bt_Candidate
             // 
@@ -154,48 +129,110 @@
             this.bt_Candidate.Text = "Hồ sơ ứng viên";
             this.bt_Candidate.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // tabControl1
             // 
-            this.panel3.AutoSize = true;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(270, 147);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1006, 501);
-            this.panel3.TabIndex = 2;
+            this.tabControl1.Controls.Add(this.tabJobVancacy);
+            this.tabControl1.Controls.Add(this.tabCandidate);
+            this.tabControl1.Location = new System.Drawing.Point(276, 131);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(997, 505);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabJobVancacy
+            // 
+            this.tabJobVancacy.Location = new System.Drawing.Point(4, 22);
+            this.tabJobVancacy.Name = "tabJobVancacy";
+            this.tabJobVancacy.Padding = new System.Windows.Forms.Padding(3);
+            this.tabJobVancacy.Size = new System.Drawing.Size(989, 479);
+            this.tabJobVancacy.TabIndex = 0;
+            this.tabJobVancacy.Text = "Yêu cầu Tuyển Dụng";
+            this.tabJobVancacy.UseVisualStyleBackColor = true;
+            // 
+            // tabCandidate
+            // 
+            this.tabCandidate.Location = new System.Drawing.Point(4, 22);
+            this.tabCandidate.Name = "tabCandidate";
+            this.tabCandidate.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCandidate.Size = new System.Drawing.Size(989, 479);
+            this.tabCandidate.TabIndex = 1;
+            this.tabCandidate.Text = "Hồ Sơ Ứng Viên";
+            this.tabCandidate.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Aqua;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1272, 131);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Tuyendung.Properties.Resources._1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(270, 128);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(429, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(719, 42);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "CHƯƠNG TRÌNH QUẢN LÝ TUYỂN DỤNG";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 648);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UserForm";
+            this.Text = "Phần mềm tuyển dụng";
             this.Load += new System.EventHandler(this.Menu_Load);
+            this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+       
+       
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+      
+        private System.Windows.Forms.Button btnHosotrungtuyen;
         private System.Windows.Forms.Button bt_Interview;
         private System.Windows.Forms.Button bt_InterviewCampaign;
-        private System.Windows.Forms.Button bu;
+        private System.Windows.Forms.Button btnJobVancany;
         private System.Windows.Forms.Button bt_Candidate;
-        private System.Windows.Forms.Panel panel3;
-
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabJobVancacy;
+        private System.Windows.Forms.TabPage tabCandidate;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
