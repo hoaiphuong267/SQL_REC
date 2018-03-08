@@ -36,17 +36,17 @@ namespace Tuyendung
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserLogin user = UserLogin.getUser();
-            if (txtUsername.Text == "" || txtPassword.Text == "")
+            if (txtUsername1.Text == "" || txtPassword1.Text == "")
             {
                 MessageBox.Show("Please fill in the fields!!!");
             }
             else
             {
-                if (user.Login(txtUsername.Text, txtPassword.Text) == true)
+                if (user.Login(txtUsername1.Text, txtPassword1.Text) == true)
                 {
                     Menu frmUser = new Menu();
                     frmUser.ShowDialog();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -54,6 +54,11 @@ namespace Tuyendung
                 }
 
             }
+
+        }
+
+        private void txtUsername1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

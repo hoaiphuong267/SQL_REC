@@ -11,17 +11,17 @@ namespace Tuyendung.General
     {
         private UserLogin database;
         public bool error;
-        private int m_userID ;
+        //private int m_userID ;
         private string m_firstname;
         private string m_lastname;
         private string m_username;
         private string m_password;
         public string EmpError;
-        public int UserID
-        {
-            get { return m_userID; }
-            //set { m_userID = value; }
-        }
+        //public int UserID
+        ////{
+        ////    get { return m_userID; }
+        ////    //set { m_userID = value; }
+        ////}
         public string EmployeeFirstName
         {
             get { return m_firstname; }
