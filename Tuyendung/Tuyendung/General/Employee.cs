@@ -69,7 +69,7 @@ namespace Tuyendung.General
                         cmd.CommandText = "Insert Into Register(Ho,Ten,Username, Password) Values(@firstname,@lastname, @username, @password)";
                         cmd.Parameters.AddWithValue("@firstname", m_firstname);
                         cmd.Parameters.AddWithValue("@lastname", m_lastname);
-                        cmd.Parameters.AddWithValue("@username", m_username);
+                        //cmd.Parameters.AddWithValue("@username", m_username);
                         cmd.Parameters.AddWithValue("@password", m_password);
                         cmd.ExecuteNonQuery();
                     }

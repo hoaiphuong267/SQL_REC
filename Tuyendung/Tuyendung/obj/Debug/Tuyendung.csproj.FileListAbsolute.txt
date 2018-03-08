@@ -22,3 +22,5 @@ C:\Users\ACER\Desktop\REC_Tearm\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.
 C:\Users\ACER\Desktop\REC_Tearm\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.RegisterForm.resources
 C:\Users\ACER\Desktop\REC_Tearm\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache
 C:\Users\ACER\Desktop\REC_Tearm\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Menu1.resources
+C:\Users\ACER\Desktop\REC_Tearm\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate.resources
+C:\Users\ACER\Desktop\REC_Tearm\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.JobVancany.resources

@@ -49,5 +49,10 @@ namespace Tuyendung
             txtPassword2.Text = "";
             txtUsername.Text = "";
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
