@@ -52,7 +52,18 @@ namespace Tuyendung
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-
+        }
+        private void label4_Click(object sender, EventArgs e)
+        {
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
+        private void bt_BackLogin_Click(object sender, EventArgs e)
+        {
+            Login frm = new Login();
+            frm.Show();
+            this.Close();
         }
     }
 }
