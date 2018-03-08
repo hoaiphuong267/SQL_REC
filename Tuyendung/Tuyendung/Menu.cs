@@ -26,5 +26,11 @@ namespace Tuyendung
         {
 
         }
+
+        private void bt_Candidate_Click(object sender, EventArgs e)
+        {
+            Candidate frm_Rec_Candidate = new Candidate();
+            frm_Rec_Candidate.ShowDialog();
+        }
     }
 }

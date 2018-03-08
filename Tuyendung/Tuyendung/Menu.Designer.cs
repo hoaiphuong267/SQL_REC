@@ -86,7 +86,7 @@
             this.panel2.Controls.Add(this.bt_Candidate);
             this.panel2.Location = new System.Drawing.Point(-1, 144);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(273, 501);
+            this.panel2.Size = new System.Drawing.Size(273, 541);
             this.panel2.TabIndex = 1;
             // 
             // button4
@@ -153,6 +153,7 @@
             this.bt_Candidate.TabIndex = 2;
             this.bt_Candidate.Text = "Hồ sơ ứng viên";
             this.bt_Candidate.UseVisualStyleBackColor = true;
+            this.bt_Candidate.Click += new System.EventHandler(this.bt_Candidate_Click);
             // 
             // panel3
             // 
@@ -161,14 +162,14 @@
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Location = new System.Drawing.Point(270, 147);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1006, 501);
+            this.panel3.Size = new System.Drawing.Size(1006, 529);
             this.panel3.TabIndex = 2;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 648);
+            this.ClientSize = new System.Drawing.Size(1276, 688);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

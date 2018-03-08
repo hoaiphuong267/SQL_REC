@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Candidate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_Filter = new System.Windows.Forms.Button();
+            this.bt_Image = new System.Windows.Forms.Button();
+            this.pic_1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bt_addCandidate = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -43,14 +48,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bt_Image = new System.Windows.Forms.Button();
-            this.bt_Filter = new System.Windows.Forms.Button();
-            this.pic_1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.bt_addCandidate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,6 +80,72 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu > Tuyển Dụng > Hồ sơ ứng viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // bt_Filter
+            // 
+            this.bt_Filter.Image = ((System.Drawing.Image)(resources.GetObject("bt_Filter.Image")));
+            this.bt_Filter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Filter.Location = new System.Drawing.Point(264, 151);
+            this.bt_Filter.Name = "bt_Filter";
+            this.bt_Filter.Size = new System.Drawing.Size(130, 41);
+            this.bt_Filter.TabIndex = 19;
+            this.bt_Filter.Text = "Đánh giá";
+            this.bt_Filter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_Filter.UseVisualStyleBackColor = true;
+            this.bt_Filter.Click += new System.EventHandler(this.bt_Filter_Click);
+            // 
+            // bt_Image
+            // 
+            this.bt_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Image.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Image.Image = ((System.Drawing.Image)(resources.GetObject("bt_Image.Image")));
+            this.bt_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Image.Location = new System.Drawing.Point(524, 154);
+            this.bt_Image.Name = "bt_Image";
+            this.bt_Image.Size = new System.Drawing.Size(156, 26);
+            this.bt_Image.TabIndex = 18;
+            this.bt_Image.Text = "Chọn ảnh";
+            this.bt_Image.UseVisualStyleBackColor = true;
+            this.bt_Image.Click += new System.EventHandler(this.bt_Image_Click);
+            // 
+            // pic_1
+            // 
+            this.pic_1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.pic_1.Location = new System.Drawing.Point(695, 24);
+            this.pic_1.Name = "pic_1";
+            this.pic_1.Size = new System.Drawing.Size(249, 168);
+            this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_1.TabIndex = 17;
+            this.pic_1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(127, 154);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(131, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Edit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bt_addCandidate
+            // 
+            this.bt_addCandidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_addCandidate.Image = ((System.Drawing.Image)(resources.GetObject("bt_addCandidate.Image")));
+            this.bt_addCandidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_addCandidate.Location = new System.Drawing.Point(0, 151);
+            this.bt_addCandidate.Name = "bt_addCandidate";
+            this.bt_addCandidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_addCandidate.Size = new System.Drawing.Size(121, 41);
+            this.bt_addCandidate.TabIndex = 15;
+            this.bt_addCandidate.Text = "Tạo mới";
+            this.bt_addCandidate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_addCandidate.UseVisualStyleBackColor = true;
+            this.bt_addCandidate.Click += new System.EventHandler(this.bt_addCandidate_Click);
             // 
             // textBox5
             // 
@@ -181,87 +247,25 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 249);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 224);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1211, 287);
+            this.dataGridView1.Size = new System.Drawing.Size(1001, 287);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // bt_Image
-            // 
-            this.bt_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Image.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Image.Image = ((System.Drawing.Image)(resources.GetObject("bt_Image.Image")));
-            this.bt_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Image.Location = new System.Drawing.Point(859, 189);
-            this.bt_Image.Name = "bt_Image";
-            this.bt_Image.Size = new System.Drawing.Size(156, 26);
-            this.bt_Image.TabIndex = 18;
-            this.bt_Image.Text = "Chọn ảnh";
-            this.bt_Image.UseVisualStyleBackColor = true;
-            this.bt_Image.Click += new System.EventHandler(this.bt_Image_Click);
-            // 
-            // bt_Filter
-            // 
-            this.bt_Filter.Image = ((System.Drawing.Image)(resources.GetObject("bt_Filter.Image")));
-            this.bt_Filter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Filter.Location = new System.Drawing.Point(264, 168);
-            this.bt_Filter.Name = "bt_Filter";
-            this.bt_Filter.Size = new System.Drawing.Size(130, 41);
-            this.bt_Filter.TabIndex = 19;
-            this.bt_Filter.Text = "Đánh giá";
-            this.bt_Filter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_Filter.UseVisualStyleBackColor = true;
-            // 
-            // pic_1
-            // 
-            this.pic_1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pic_1.Location = new System.Drawing.Point(808, 22);
-            this.pic_1.Name = "pic_1";
-            this.pic_1.Size = new System.Drawing.Size(249, 168);
-            this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_1.TabIndex = 17;
-            this.pic_1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(127, 168);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(131, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // bt_addCandidate
-            // 
-            this.bt_addCandidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_addCandidate.Image = ((System.Drawing.Image)(resources.GetObject("bt_addCandidate.Image")));
-            this.bt_addCandidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_addCandidate.Location = new System.Drawing.Point(0, 168);
-            this.bt_addCandidate.Name = "bt_addCandidate";
-            this.bt_addCandidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_addCandidate.Size = new System.Drawing.Size(121, 41);
-            this.bt_addCandidate.TabIndex = 15;
-            this.bt_addCandidate.Text = "Tạo mới";
-            this.bt_addCandidate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_addCandidate.UseVisualStyleBackColor = true;
             // 
             // Candidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 536);
+            this.ClientSize = new System.Drawing.Size(1001, 511);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Candidate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Candidate";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

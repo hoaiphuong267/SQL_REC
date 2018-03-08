@@ -47,5 +47,20 @@ namespace Tuyendung
             }
         }
 
+        private void bt_Filter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_addCandidate_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
