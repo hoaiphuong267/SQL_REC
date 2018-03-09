@@ -34,8 +34,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUsername1 = new System.Windows.Forms.TextBox();
             this.txtPassword1 = new System.Windows.Forms.TextBox();
+            this.txtUsername1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,17 @@
             this.panel1.Size = new System.Drawing.Size(370, 129);
             this.panel1.TabIndex = 0;
             // 
+            // txtPassword1
+            // 
+            this.txtPassword1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword1.Location = new System.Drawing.Point(131, 45);
+            this.txtPassword1.Name = "txtPassword1";
+            this.txtPassword1.PasswordChar = '*';
+            this.txtPassword1.Size = new System.Drawing.Size(227, 26);
+            this.txtPassword1.TabIndex = 5;
+            // 
             // txtUsername1
             // 
             this.txtUsername1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -111,16 +122,6 @@
             this.txtUsername1.Size = new System.Drawing.Size(227, 26);
             this.txtUsername1.TabIndex = 4;
             this.txtUsername1.TextChanged += new System.EventHandler(this.txtUsername1_TextChanged);
-            // 
-            // txtPassword1
-            // 
-            this.txtPassword1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword1.Location = new System.Drawing.Point(131, 45);
-            this.txtPassword1.Name = "txtPassword1";
-            this.txtPassword1.Size = new System.Drawing.Size(227, 26);
-            this.txtPassword1.TabIndex = 5;
             // 
             // Login
             // 

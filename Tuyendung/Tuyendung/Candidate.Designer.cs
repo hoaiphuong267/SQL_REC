@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Candidate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bt_Filter = new System.Windows.Forms.Button();
             this.bt_Image = new System.Windows.Forms.Button();
@@ -83,7 +82,6 @@
             // 
             // bt_Filter
             // 
-            this.bt_Filter.Image = ((System.Drawing.Image)(resources.GetObject("bt_Filter.Image")));
             this.bt_Filter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bt_Filter.Location = new System.Drawing.Point(264, 151);
             this.bt_Filter.Name = "bt_Filter";
@@ -98,7 +96,6 @@
             // 
             this.bt_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Image.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Image.Image = ((System.Drawing.Image)(resources.GetObject("bt_Image.Image")));
             this.bt_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bt_Image.Location = new System.Drawing.Point(524, 154);
             this.bt_Image.Name = "bt_Image";
@@ -121,7 +118,6 @@
             // button1
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(127, 154);
             this.button1.Name = "button1";
@@ -135,7 +131,6 @@
             // bt_addCandidate
             // 
             this.bt_addCandidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_addCandidate.Image = ((System.Drawing.Image)(resources.GetObject("bt_addCandidate.Image")));
             this.bt_addCandidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bt_addCandidate.Location = new System.Drawing.Point(0, 151);
             this.bt_addCandidate.Name = "bt_addCandidate";
@@ -170,9 +165,10 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(137, 116);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(219, 32);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // textBox1
@@ -184,7 +180,7 @@
             // 
             // txt_CodeCandidate
             // 
-            this.txt_CodeCandidate.Location = new System.Drawing.Point(135, 38);
+            this.txt_CodeCandidate.Location = new System.Drawing.Point(135, 41);
             this.txt_CodeCandidate.Name = "txt_CodeCandidate";
             this.txt_CodeCandidate.Size = new System.Drawing.Size(156, 32);
             this.txt_CodeCandidate.TabIndex = 8;
