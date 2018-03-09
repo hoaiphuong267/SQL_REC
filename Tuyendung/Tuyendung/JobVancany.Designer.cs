@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMVTT = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtMDKTuyen = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtSoVongTuyen = new System.Windows.Forms.TextBox();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.dtDateEnd = new System.Windows.Forms.DateTimePicker();
@@ -50,15 +53,21 @@
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LevelInterview = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobConditionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMVTT = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabJobVancacy = new System.Windows.Forms.TabPage();
+            this.tabCandidate = new System.Windows.Forms.TabPage();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabJobVancacy.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDel);
+            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.txtMVTT);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtMDKTuyen);
@@ -76,12 +85,29 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lb_Date);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(970, 243);
+            this.groupBox1.Size = new System.Drawing.Size(974, 226);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin tuyển dụng";
+            // 
+            // txtMVTT
+            // 
+            this.txtMVTT.Location = new System.Drawing.Point(128, 64);
+            this.txtMVTT.Name = "txtMVTT";
+            this.txtMVTT.Size = new System.Drawing.Size(200, 32);
+            this.txtMVTT.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 19);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Mã Vị Trí Tuyển";
             // 
             // txtMDKTuyen
             // 
@@ -89,6 +115,16 @@
             this.txtMDKTuyen.Name = "txtMDKTuyen";
             this.txtMDKTuyen.Size = new System.Drawing.Size(173, 32);
             this.txtMDKTuyen.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(346, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 19);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Mã Điều kiện tuyển";
             // 
             // txtSoVongTuyen
             // 
@@ -106,6 +142,7 @@
             // 
             // dtDateEnd
             // 
+            this.dtDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDateEnd.Location = new System.Drawing.Point(128, 162);
             this.dtDateEnd.Name = "dtDateEnd";
             this.dtDateEnd.Size = new System.Drawing.Size(200, 32);
@@ -143,7 +180,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(587, 207);
+            this.btnTimKiem.Location = new System.Drawing.Point(563, 190);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(105, 30);
             this.btnTimKiem.TabIndex = 6;
@@ -152,7 +189,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(442, 207);
+            this.btnAdd.Location = new System.Drawing.Point(443, 190);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(105, 30);
             this.btnAdd.TabIndex = 5;
@@ -170,6 +207,7 @@
             // 
             // dtDateStart
             // 
+            this.dtDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDateStart.Location = new System.Drawing.Point(128, 117);
             this.dtDateStart.Name = "dtDateStart";
             this.dtDateStart.Size = new System.Drawing.Size(200, 32);
@@ -206,7 +244,7 @@
             this.Soluong,
             this.LevelInterview,
             this.JobConditionID});
-            this.dgvJobVancany.Location = new System.Drawing.Point(140, 271);
+            this.dgvJobVancany.Location = new System.Drawing.Point(121, 238);
             this.dgvJobVancany.Name = "dgvJobVancany";
             this.dgvJobVancany.Size = new System.Drawing.Size(743, 270);
             this.dgvJobVancany.TabIndex = 2;
@@ -254,40 +292,64 @@
             this.JobConditionID.HeaderText = "Mã ĐK Tuyển";
             this.JobConditionID.Name = "JobConditionID";
             // 
-            // label6
+            // tabControl1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(346, 70);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 19);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Mã Điều kiện tuyển";
+            this.tabControl1.Controls.Add(this.tabJobVancacy);
+            this.tabControl1.Controls.Add(this.tabCandidate);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(995, 540);
+            this.tabControl1.TabIndex = 3;
             // 
-            // txtMVTT
+            // tabJobVancacy
             // 
-            this.txtMVTT.Location = new System.Drawing.Point(128, 64);
-            this.txtMVTT.Name = "txtMVTT";
-            this.txtMVTT.Size = new System.Drawing.Size(200, 32);
-            this.txtMVTT.TabIndex = 17;
+            this.tabJobVancacy.Controls.Add(this.groupBox1);
+            this.tabJobVancacy.Controls.Add(this.dgvJobVancany);
+            this.tabJobVancacy.Location = new System.Drawing.Point(4, 22);
+            this.tabJobVancacy.Name = "tabJobVancacy";
+            this.tabJobVancacy.Padding = new System.Windows.Forms.Padding(3);
+            this.tabJobVancacy.Size = new System.Drawing.Size(987, 514);
+            this.tabJobVancacy.TabIndex = 0;
+            this.tabJobVancacy.Text = "Yêu cầu Tuyển Dụng";
+            this.tabJobVancacy.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // tabCandidate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 19);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Mã Vị Trí Tuyển";
+            this.tabCandidate.Location = new System.Drawing.Point(4, 22);
+            this.tabCandidate.Name = "tabCandidate";
+            this.tabCandidate.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCandidate.Size = new System.Drawing.Size(989, 479);
+            this.tabCandidate.TabIndex = 1;
+            this.tabCandidate.Text = "Hồ Sơ Ứng Viên";
+            this.tabCandidate.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(685, 190);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(105, 30);
+            this.btnEdit.TabIndex = 18;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(796, 190);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(105, 30);
+            this.btnDel.TabIndex = 19;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // JobVancany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 538);
-            this.Controls.Add(this.dgvJobVancany);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
             this.Name = "JobVancany";
@@ -297,6 +359,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabJobVancacy.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -328,5 +392,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMVTT;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabJobVancacy;
+        private System.Windows.Forms.TabPage tabCandidate;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDel;
     }
 }

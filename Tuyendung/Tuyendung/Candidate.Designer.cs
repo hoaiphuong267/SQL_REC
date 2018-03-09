@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Candidate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pic_Attact = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.bt_addCandidate = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -45,10 +46,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pic_Attact = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Attact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +75,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu > Tuyển Dụng > Hồ sơ ứng viên";
+            // 
+            // pic_Attact
+            // 
+            this.pic_Attact.Location = new System.Drawing.Point(808, 22);
+            this.pic_Attact.Name = "pic_Attact";
+            this.pic_Attact.Size = new System.Drawing.Size(249, 187);
+            this.pic_Attact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Attact.TabIndex = 17;
+            this.pic_Attact.TabStop = false;
             // 
             // button1
             // 
@@ -121,9 +130,10 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(137, 116);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(219, 32);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // textBox1
@@ -203,15 +213,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1211, 287);
             this.dataGridView1.TabIndex = 1;
             // 
-            // pic_Attact
-            // 
-            this.pic_Attact.Location = new System.Drawing.Point(808, 22);
-            this.pic_Attact.Name = "pic_Attact";
-            this.pic_Attact.Size = new System.Drawing.Size(249, 187);
-            this.pic_Attact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Attact.TabIndex = 17;
-            this.pic_Attact.TabStop = false;
-            // 
             // Candidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,8 +224,8 @@
             this.Text = "Candidate";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Attact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

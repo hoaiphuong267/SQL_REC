@@ -49,7 +49,7 @@ namespace Tuyendung
             string ins = "INSERT INTO JobVancany(DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName ) VALUES ('" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "')";
             SqlCommand cmd = new SqlCommand(ins, cnn);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Thêm Thanh Cong");
+            MessageBox.Show("Thêm Thành Cong");
             cnn.Close();
             ketnoicsdl();
 
@@ -71,6 +71,28 @@ namespace Tuyendung
 
 
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+            string ins1 = "UPDATE JobVancany SET DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "'";
+            SqlCommand cmd = new SqlCommand(ins1, cnn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Sửa Thành Cong");
+            cnn.Close();
+            ketnoicsdl();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+            string ins1 = "UPDATE JobVancany SET DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "' AND isdelete = 0 ";
+            SqlCommand cmd = new SqlCommand(ins1, cnn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Sửa Thành Cong");
+            cnn.Close();
+            ketnoicsdl();
         }
     }
 }

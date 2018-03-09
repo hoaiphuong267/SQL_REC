@@ -20,6 +20,7 @@ namespace Tuyendung
         private void Menu_Load(object sender, EventArgs e)
         {
             timer1.Start();
+           
         }
 
        
@@ -40,13 +41,16 @@ namespace Tuyendung
 
         }
 
-        private void btnJobVancany_Click(object sender, EventArgs e)
+       private void btnJobVancany_Click(object sender, EventArgs e)
         {
             JobVancany frmJobVancacy = new JobVancany();
             frmJobVancacy.TopLevel = false;
-            tabJobVancacy.Controls.Add(frmJobVancacy);
+            panel3.Controls.Add(frmJobVancacy);
+            frmJobVancacy.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frmJobVancacy.Dock = DockStyle.Fill;
             frmJobVancacy.Show();
         }
+
+      
     }
 }

@@ -62,6 +62,7 @@ CREATE TABLE dbo.JobVancany
 	Soluong INT,
 	LevelInterview INT,
 	JobConditionID INT,
+	isdelete  BIT DEFAULT ((0)),
 	FOREIGN KEY (JobConditionID) REFERENCES dbo.JobCondition(JobConditionID)
 );
 -----Ho so ung vien----
