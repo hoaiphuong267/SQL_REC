@@ -62,7 +62,8 @@ namespace Tuyendung
         private void bt_BackLogin_Click(object sender, EventArgs e)
         {
             Login frm = new Login();
-            frm.Show();
+            this.Hide();
+            frm.ShowDialog();
             this.Close();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Tuyendung
 {
-    partial class Candidate
+    partial class Create_Candidate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_Candidate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bt_Filter = new System.Windows.Forms.Button();
             this.bt_Image = new System.Windows.Forms.Button();
             this.pic_1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.bt_addCandidate = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,10 +54,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bt_Filter);
+            this.groupBox1.Controls.Add(this.bt_Comeback_candidate);
             this.groupBox1.Controls.Add(this.bt_Image);
             this.groupBox1.Controls.Add(this.pic_1);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.bt_addCandidate);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -71,33 +70,22 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 6);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1214, 215);
+            this.groupBox1.Size = new System.Drawing.Size(1001, 239);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Menu > Tuyển Dụng > Hồ sơ ứng viên";
+            this.groupBox1.Text = "Tạo mới Hồ sơ ứng viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // bt_Filter
-            // 
-            this.bt_Filter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Filter.Location = new System.Drawing.Point(264, 151);
-            this.bt_Filter.Name = "bt_Filter";
-            this.bt_Filter.Size = new System.Drawing.Size(130, 41);
-            this.bt_Filter.TabIndex = 19;
-            this.bt_Filter.Text = "Đánh giá";
-            this.bt_Filter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_Filter.UseVisualStyleBackColor = true;
-            this.bt_Filter.Click += new System.EventHandler(this.bt_Filter_Click);
             // 
             // bt_Image
             // 
             this.bt_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Image.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Image.Location = new System.Drawing.Point(524, 154);
+            this.bt_Image.Location = new System.Drawing.Point(792, 186);
             this.bt_Image.Name = "bt_Image";
             this.bt_Image.Size = new System.Drawing.Size(156, 26);
             this.bt_Image.TabIndex = 18;
@@ -108,87 +96,74 @@
             // pic_1
             // 
             this.pic_1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pic_1.Location = new System.Drawing.Point(695, 24);
+            this.pic_1.Location = new System.Drawing.Point(743, 12);
             this.pic_1.Name = "pic_1";
             this.pic_1.Size = new System.Drawing.Size(249, 168);
             this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_1.TabIndex = 17;
             this.pic_1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(127, 154);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(131, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // bt_addCandidate
             // 
             this.bt_addCandidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_addCandidate.Image = ((System.Drawing.Image)(resources.GetObject("bt_addCandidate.Image")));
             this.bt_addCandidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_addCandidate.Location = new System.Drawing.Point(0, 151);
+            this.bt_addCandidate.Location = new System.Drawing.Point(16, 174);
             this.bt_addCandidate.Name = "bt_addCandidate";
             this.bt_addCandidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bt_addCandidate.Size = new System.Drawing.Size(121, 41);
             this.bt_addCandidate.TabIndex = 15;
-            this.bt_addCandidate.Text = "Tạo mới";
-            this.bt_addCandidate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_addCandidate.Text = "Lưu ";
             this.bt_addCandidate.UseVisualStyleBackColor = true;
             this.bt_addCandidate.Click += new System.EventHandler(this.bt_addCandidate_Click);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(524, 116);
+            this.textBox5.Location = new System.Drawing.Point(512, 112);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 32);
+            this.textBox5.Size = new System.Drawing.Size(225, 32);
             this.textBox5.TabIndex = 14;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(524, 70);
+            this.textBox3.Location = new System.Drawing.Point(512, 76);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 32);
+            this.textBox3.Size = new System.Drawing.Size(225, 32);
             this.textBox3.TabIndex = 12;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(524, 31);
+            this.textBox2.Location = new System.Drawing.Point(512, 41);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 32);
+            this.textBox2.Size = new System.Drawing.Size(225, 32);
             this.textBox2.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 116);
+            this.dateTimePicker1.Location = new System.Drawing.Point(135, 112);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(219, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(131, 32);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(135, 76);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 32);
+            this.textBox1.Size = new System.Drawing.Size(245, 32);
             this.textBox1.TabIndex = 9;
             // 
             // txt_CodeCandidate
             // 
             this.txt_CodeCandidate.Location = new System.Drawing.Point(135, 41);
             this.txt_CodeCandidate.Name = "txt_CodeCandidate";
-            this.txt_CodeCandidate.Size = new System.Drawing.Size(156, 32);
+            this.txt_CodeCandidate.Size = new System.Drawing.Size(245, 32);
             this.txt_CodeCandidate.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(384, 125);
+            this.label7.Location = new System.Drawing.Point(404, 118);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 23);
             this.label7.TabIndex = 7;
@@ -197,7 +172,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(384, 79);
+            this.label6.Location = new System.Drawing.Point(404, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 23);
             this.label6.TabIndex = 5;
@@ -215,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(384, 38);
+            this.label4.Location = new System.Drawing.Point(404, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 23);
             this.label4.TabIndex = 3;
@@ -243,19 +218,32 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 224);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 221);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1001, 287);
+            this.dataGridView1.Size = new System.Drawing.Size(1001, 290);
             this.dataGridView1.TabIndex = 1;
             // 
-            // Candidate
+            // bt_Comeback_candidate
+            // 
+            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Comeback_candidate.Location = new System.Drawing.Point(145, 171);
+            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
+            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
+            this.bt_Comeback_candidate.TabIndex = 19;
+            this.bt_Comeback_candidate.Text = "Quay về ";
+            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
+            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
+            // 
+            // Create_Candidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 511);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Candidate";
+            this.Name = "Create_Candidate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Candidate";
             this.groupBox1.ResumeLayout(false);
@@ -274,7 +262,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bt_addCandidate;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
@@ -286,6 +273,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pic_1;
         private System.Windows.Forms.Button bt_Image;
-        private System.Windows.Forms.Button bt_Filter;
+        private System.Windows.Forms.Button bt_Comeback_candidate;
     }
 }

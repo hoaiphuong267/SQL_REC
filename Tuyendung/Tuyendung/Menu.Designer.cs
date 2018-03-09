@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHosotrungtuyen = new System.Windows.Forms.Button();
             this.bt_Interview = new System.Windows.Forms.Button();
@@ -55,11 +56,12 @@
             this.panel2.Controls.Add(this.bt_Candidate);
             this.panel2.Location = new System.Drawing.Point(1, 131);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(273, 541);
+            this.panel2.Size = new System.Drawing.Size(273, 588);
             this.panel2.TabIndex = 1;
             // 
             // btnHosotrungtuyen
             // 
+            this.btnHosotrungtuyen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHosotrungtuyen.BackgroundImage")));
             this.btnHosotrungtuyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnHosotrungtuyen.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHosotrungtuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -73,6 +75,7 @@
             // 
             // bt_Interview
             // 
+            this.bt_Interview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Interview.BackgroundImage")));
             this.bt_Interview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Interview.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Interview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -85,6 +88,7 @@
             // 
             // bt_InterviewCampaign
             // 
+            this.bt_InterviewCampaign.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_InterviewCampaign.BackgroundImage")));
             this.bt_InterviewCampaign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_InterviewCampaign.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_InterviewCampaign.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -97,6 +101,7 @@
             // 
             // btnJobVancany
             // 
+            this.btnJobVancany.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnJobVancany.BackgroundImage")));
             this.btnJobVancany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnJobVancany.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobVancany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -110,6 +115,7 @@
             // 
             // bt_Candidate
             // 
+            this.bt_Candidate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Candidate.BackgroundImage")));
             this.bt_Candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Candidate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Candidate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -124,7 +130,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel1
@@ -134,7 +140,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 131);
+            this.panel1.Size = new System.Drawing.Size(1286, 131);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -153,23 +159,24 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(252, 128);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(276, 133);
+            this.panel3.Location = new System.Drawing.Point(276, 131);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(997, 501);
+            this.panel3.Size = new System.Drawing.Size(1014, 588);
             this.panel3.TabIndex = 4;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 688);
+            this.ClientSize = new System.Drawing.Size(1285, 711);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -177,6 +184,7 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm tuyển dụng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

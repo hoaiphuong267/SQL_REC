@@ -28,8 +28,9 @@ namespace Tuyendung
         private void btnRegister_Click(object sender, EventArgs e)
         {
             RegisterForm register = new RegisterForm();
-            register.Show();
             this.Hide();
+            register.ShowDialog();
+            this.Close();
         } 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -43,7 +44,10 @@ namespace Tuyendung
                 if (user.Login(txtUsername1.Text, txtPassword1.Text) == true)
                 {
                     Menu frmUser = new Menu();
-                    frmUser.ShowDialog();           
+                    this.Hide();
+                    frmUser.ShowDialog();
+                    this.Close();
+               
                 }
                 else
                 {

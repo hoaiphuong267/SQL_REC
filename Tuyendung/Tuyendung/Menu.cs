@@ -43,8 +43,13 @@ namespace Tuyendung
 
      private void bt_Candidate_Click(object sender, EventArgs e)
         {
-            Candidate frm_Rec_Candidate = new Candidate();
-            frm_Rec_Candidate.ShowDialog();
+            //Phuong sua lai
+            Candidate1 frm_Rec_Candidate = new Candidate1();
+            frm_Rec_Candidate.TopLevel = false;
+            panel3.Controls.Add(frm_Rec_Candidate);
+            frm_Rec_Candidate.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm_Rec_Candidate.Dock = DockStyle.Fill;
+            frm_Rec_Candidate.Show();
         }
 
         private void btnJobVancany_Click(object sender, EventArgs e)
@@ -55,6 +60,17 @@ namespace Tuyendung
             frmJobVancacy.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frmJobVancacy.Dock = DockStyle.Fill;
             frmJobVancacy.Show();
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn thoát khỏi màn hình ?",
+                                  "Thoát khỏi màn hình giao diện Menu",
+                                  MessageBoxButtons.YesNo,
+                                  MessageBoxIcon.Warning) == DialogResult.No)         
+            {
+                e.Cancel = true;
+            }
         }
 
       

@@ -11,18 +11,15 @@ using System.Drawing.Imaging;
 
 namespace Tuyendung
 {
-    public partial class Candidate : Form
+    public partial class Create_Candidate : Form
     {
-        public Candidate()
+        public Create_Candidate()
         {
             InitializeComponent();
         }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
-
         private void bt_Image_Click(object sender, EventArgs e)
         {
             try
@@ -61,6 +58,16 @@ namespace Tuyendung
         {
 
         }
+
+        private void bt_Comeback_candidate_Click(object sender, EventArgs e)
+        {
+            Candidate1 frmcc = new Candidate1();
+            this.Hide();
+            frmcc.ShowDialog();
+            this.Close();
+        }
+
+       
 
     }
 }

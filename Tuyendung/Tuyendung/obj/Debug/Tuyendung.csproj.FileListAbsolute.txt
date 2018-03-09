@@ -65,3 +65,17 @@ C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendun
 C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
 C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Menu.resources
 C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe.config
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.exe
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.pdb
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csprojResolveAssemblyReference.cache
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.JobVancany.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Login.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Menu.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Properties.Resources.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.RegisterForm.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Create_Candidate.resources
+C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate1.resources
