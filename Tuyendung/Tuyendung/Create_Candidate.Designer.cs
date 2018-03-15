@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_Candidate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_Save = new System.Windows.Forms.Button();
+            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
             this.bt_Image = new System.Windows.Forms.Button();
             this.pic_1 = new System.Windows.Forms.PictureBox();
-            this.bt_addCandidate = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,19 +45,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
+            this.dgv_createCandidate = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_Save);
             this.groupBox1.Controls.Add(this.bt_Comeback_candidate);
             this.groupBox1.Controls.Add(this.bt_Image);
             this.groupBox1.Controls.Add(this.pic_1);
-            this.groupBox1.Controls.Add(this.bt_addCandidate);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -79,6 +78,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo mới Hồ sơ ứng viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // bt_Save
+            // 
+            this.bt_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Save.Location = new System.Drawing.Point(16, 171);
+            this.bt_Save.Name = "bt_Save";
+            this.bt_Save.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_Save.Size = new System.Drawing.Size(121, 41);
+            this.bt_Save.TabIndex = 21;
+            this.bt_Save.Text = "Lưu";
+            this.bt_Save.UseVisualStyleBackColor = true;
+            this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
+            // 
+            // bt_Comeback_candidate
+            // 
+            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Comeback_candidate.Location = new System.Drawing.Point(145, 171);
+            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
+            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
+            this.bt_Comeback_candidate.TabIndex = 19;
+            this.bt_Comeback_candidate.Text = "Quay về ";
+            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
+            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
             // 
             // bt_Image
             // 
@@ -102,20 +127,6 @@
             this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_1.TabIndex = 17;
             this.pic_1.TabStop = false;
-            // 
-            // bt_addCandidate
-            // 
-            this.bt_addCandidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_addCandidate.Image = ((System.Drawing.Image)(resources.GetObject("bt_addCandidate.Image")));
-            this.bt_addCandidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_addCandidate.Location = new System.Drawing.Point(16, 174);
-            this.bt_addCandidate.Name = "bt_addCandidate";
-            this.bt_addCandidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_addCandidate.Size = new System.Drawing.Size(121, 41);
-            this.bt_addCandidate.TabIndex = 15;
-            this.bt_addCandidate.Text = "Lưu ";
-            this.bt_addCandidate.UseVisualStyleBackColor = true;
-            this.bt_addCandidate.Click += new System.EventHandler(this.bt_addCandidate_Click);
             // 
             // textBox5
             // 
@@ -214,34 +225,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã ứng viên";
             // 
-            // dataGridView1
+            // dgv_createCandidate
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1001, 290);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // bt_Comeback_candidate
-            // 
-            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Comeback_candidate.Location = new System.Drawing.Point(145, 171);
-            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
-            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
-            this.bt_Comeback_candidate.TabIndex = 19;
-            this.bt_Comeback_candidate.Text = "Quay về ";
-            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
-            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
+            this.dgv_createCandidate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_createCandidate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_createCandidate.Location = new System.Drawing.Point(0, 221);
+            this.dgv_createCandidate.Name = "dgv_createCandidate";
+            this.dgv_createCandidate.Size = new System.Drawing.Size(1001, 290);
+            this.dgv_createCandidate.TabIndex = 1;
             // 
             // Create_Candidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 511);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_createCandidate);
             this.Controls.Add(this.groupBox1);
             this.Name = "Create_Candidate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -249,7 +247,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +260,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bt_addCandidate;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -270,9 +267,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txt_CodeCandidate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_createCandidate;
         private System.Windows.Forms.PictureBox pic_1;
         private System.Windows.Forms.Button bt_Image;
         private System.Windows.Forms.Button bt_Comeback_candidate;
+        private System.Windows.Forms.Button bt_Save;
     }
 }

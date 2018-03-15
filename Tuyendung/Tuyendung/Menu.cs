@@ -43,13 +43,13 @@ namespace Tuyendung
 
      private void bt_Candidate_Click(object sender, EventArgs e)
         {
-            //Phuong sua lai
-            Candidate1 frm_Rec_Candidate = new Candidate1();
-            frm_Rec_Candidate.TopLevel = false;
-            panel3.Controls.Add(frm_Rec_Candidate);
-            frm_Rec_Candidate.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm_Rec_Candidate.Dock = DockStyle.Fill;
-            frm_Rec_Candidate.Show();
+            Candidate1 frmCandidate = new Candidate1();
+            frmCandidate.TopLevel = false;
+            panel3.Controls.Add(frmCandidate);
+            frmCandidate.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frmCandidate.Dock = DockStyle.Fill;
+            frmCandidate.Show();
+
         }
 
         private void btnJobVancany_Click(object sender, EventArgs e)

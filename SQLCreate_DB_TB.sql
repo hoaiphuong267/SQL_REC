@@ -26,15 +26,6 @@ CREATE TABLE dbo.Register
 	Password VARCHAR(50)
 );
 
------====DELETE dbo.Account====----
-------dang nhap---
---CREATE TABLE dbo.Account
---(
---	Username NVARCHAR(150)PRIMARY KEY,
---	Password VARCHAR(50),
---	UserID int,
---	FOREIGN KEY (UserID) REFERENCES dbo.Register(UserID)
---);
 ----Nhan vien ---
 CREATE TABLE dbo.Profile
 (
@@ -49,14 +40,15 @@ CREATE TABLE dbo.JobCondition
 (
 	JobConditionID INT  IDENTITY(1,1) PRIMARY KEY,
 	JobConditionName NVARCHAR(100),
-	Value1 VARCHAR(10),
-	Value2 INT 
+	Value1 NVARCHAR(10),
+	Value2 NVARCHAR(10) 
 );
 ----yeu cau tuyen dung----
 CREATE TABLE dbo.JobVancany
 (
 	JobVancanyID INT IDENTITY(1,1) PRIMARY KEY,
 	JobVancanyName NVARCHAR(100),
+	CodeJobVancany VARCHAR(50),
 	DateStart DATE,
 	DateEnd DATE,
 	Soluong INT,
@@ -77,6 +69,7 @@ CREATE TABLE dbo.Candidate
 	Email NVARCHAR(500),
 	CandidateHistory NVARCHAR(250),
 	Status VARCHAR(50),
+	isdelete  BIT DEFAULT ((0)),
 	JobVancanyID INT,
 	FOREIGN KEY (JobVancanyID) REFERENCES dbo.JobVancany(JobVancanyID)
 
@@ -90,6 +83,7 @@ CREATE	TABLE dbo.Rec_RecruitmentHistory
 	LevelInterview INT,
 	JobVancanyID INT,
 	CandidateID INT,
+	isdelete  BIT DEFAULT ((0)),
 	FOREIGN KEY (JobVancanyID) REFERENCES dbo.JobVancany(JobVancanyID),
 	FOREIGN KEY (CandidateID) REFERENCES dbo.Candidate(CandidateID)
 );
@@ -101,6 +95,7 @@ CREATE TABLE dbo.InterviewCampaign
 	DateInterview DATE,
 	HourInterview NVARCHAR(100),
 	ProfileID INT,
+	isdelete  BIT DEFAULT ((0)),
 	FOREIGN KEY (ProfileID) REFERENCES dbo.Profile(ProfileID),
 );
 ---Ke hoach/hen phong van chi tiet----
@@ -112,6 +107,7 @@ CREATE TABLE dbo.InterviewCampaignDetail
 	DateInterview DATE,
 	HourInterview NVARCHAR(100),
 	ProfileID INT,
+	isdelete  BIT DEFAULT ((0)),
 	FOREIGN KEY (ProfileID) REFERENCES dbo.Profile(ProfileID),
 	FOREIGN KEY (InterviewCampaignID) REFERENCES dbo.InterviewCampaign(InterviewCampaignID),
 	FOREIGN KEY (CandidateID) REFERENCES dbo.Candidate(CandidateID)
@@ -134,6 +130,7 @@ CREATE TABLE dbo.Interview
 	HourInterview NVARCHAR(100),
 	ResultInterview NVARCHAR(50),
 	RecruitmentHistoryID INT,
+	isdelete  BIT DEFAULT ((0)),
 	FOREIGN KEY (CandidateID)REFERENCES dbo.Candidate(CandidateID),
 	FOREIGN KEY ( InterviewCampaignID) REFERENCES dbo.InterviewCampaign(InterviewCampaignID),
 	FOREIGN KEY (InterviewCampaignDetailID) REFERENCES dbo.InterviewCampaignDetail(InterviewCampaignDetailID),

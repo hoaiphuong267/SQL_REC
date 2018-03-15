@@ -23,6 +23,7 @@ namespace Tuyendung
             this.Hide();
             cc.ShowDialog();
             this.Close();
+       
         }
     }
 }
