@@ -115,7 +115,7 @@ namespace Tuyendung
             //}
             cnn.Open();
            // string ins = "INSERT INTO JobVancany(DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName ) VALUES ('" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "')";
-            SqlCommand cmd = new SqlCommand(ins, cnn);
+            //SqlCommand cmd = new SqlCommand(ins, cnn);
             MessageBox.Show("Thao tác thành công");
             cnn.Close();
 

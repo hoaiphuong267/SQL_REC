@@ -79,6 +79,35 @@ C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Regi
 C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache
 C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Create_Candidate.resources
 C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate1.resources
+<<<<<<< HEAD
 C:\Users\user\Desktop\Homework\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe.config
 C:\Users\user\Desktop\Homework\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.exe
 C:\Users\user\Desktop\Homework\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
+=======
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe.config
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.exe
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.pdb
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csprojResolveAssemblyReference.cache
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Create_Candidate.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate1.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.JobVancany.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Login.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Menu.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Properties.Resources.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.RegisterForm.resources
+C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe.config
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.exe
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
+>>>>>>> GiaLinhNew
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.pdb
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csprojResolveAssemblyReference.cache
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate1.resources
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Login.resources
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Menu.resources
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Properties.Resources.resources
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.RegisterForm.resources
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache

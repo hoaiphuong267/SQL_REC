@@ -18,18 +18,18 @@ namespace Tuyendung
         {
             InitializeComponent();
         }
-
+       
         private void ketnoicsdl()
         {
             cnn.Open();
-            string sql = "select * from JobVancany";  // lay het du lieu trong bang sinh vien
-            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+            string sql = "select * from JobVancany"; 
+            SqlCommand com = new SqlCommand(sql, cnn); 
             com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);  // đổ dữ liệu vào kho
-            cnn.Close();  // đóng kết nối
-            dgvJobVancany.DataSource = dt; //đổ dữ liệu vào datagridview
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable(); 
+            da.Fill(dt); 
+            cnn.Close();  
+            dgvJobVancany.DataSource = dt; 
             txtMVTT.Enabled = false;
             txtMVTT.Text = "ID Autonumber";
             txtMDKTuyen.Enabled = false;
@@ -45,6 +45,7 @@ namespace Tuyendung
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+           
             cnn.Open();
             string ins = "INSERT INTO JobVancany(DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName ) VALUES ('" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "')";
             SqlCommand cmd = new SqlCommand(ins, cnn);
@@ -87,12 +88,64 @@ namespace Tuyendung
         private void btnDel_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins1 = "UPDATE JobVancany SET DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "' AND isdelete = 0 ";
-            SqlCommand cmd = new SqlCommand(ins1, cnn);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Sửa Thành Cong");
-            cnn.Close();
-            ketnoicsdl();
+            try
+            {
+                DialogResult result = MessageBox.Show("Bạn muốn xóa?", "Yes or No", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    
+                    string ins1 = " UPDATE JobVancany SET isdelete = 1 WHERE JobVancanyID= '" + txtMVTT.Text + "'";
+                    SqlCommand cmd = new SqlCommand(ins1, cnn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa Thành Cong");
+                    //this.dgvJobVancany.Rows[index].Visible = false;
+                    cnn.Close();
+                    ketnoicsdl();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+           
+        
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            //cnn.Open();
+            var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE 1=1");
+            if (!string.IsNullOrEmpty(txtTenVT.Text))
+                sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
+            if (!string.IsNullOrEmpty(dtDateStart.Text))
+                sb.Append(" AND DateStart like '%" + dtDateStart.Text + "%'");
+            //if (!string.IsNullOrEmpty(dtDateEnd.Text))
+            //    sb.Append(" OR DateEnd like '%" + dtDateEnd.Text+ "%'");
+            if (!string.IsNullOrEmpty(txtSoluong.Text))
+                sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
+            if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))
+                sb.Append(" AND LevelInterview like '%" + txtSoVongTuyen.Text + "%'");
+            //sb.Append(";");
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sb.ToString(), cnn);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                dgvJobVancany.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+       
+
+        private void dgvJobVancany_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            e.Cancel = true;
+            e.Row.Visible = false;
+            //((JobVancany)e.Row.DataBoundItem).isDeleted = true;
         }
     }
 }
