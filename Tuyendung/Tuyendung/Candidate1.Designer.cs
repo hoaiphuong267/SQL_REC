@@ -46,7 +46,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgv_createCandidate = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -99,6 +101,7 @@
             this.bt_Filter.Text = "Tìm kiếm";
             this.bt_Filter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_Filter.UseVisualStyleBackColor = true;
+            this.bt_Filter.Click += new System.EventHandler(this.bt_Filter_Click);
             // 
             // button1
             // 
@@ -225,16 +228,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã ứng viên";
             // 
+            // dgv_createCandidate
+            // 
+            this.dgv_createCandidate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_createCandidate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_createCandidate.Location = new System.Drawing.Point(0, 245);
+            this.dgv_createCandidate.Name = "dgv_createCandidate";
+            this.dgv_createCandidate.Size = new System.Drawing.Size(1251, 264);
+            this.dgv_createCandidate.TabIndex = 2;
+            // 
             // Candidate1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 509);
+            this.Controls.Add(this.dgv_createCandidate);
             this.Controls.Add(this.groupBox1);
             this.Name = "Candidate1";
             this.Text = "Candidate1";
+            this.Load += new System.EventHandler(this.Candidate1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +273,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgv_createCandidate;
     }
 }

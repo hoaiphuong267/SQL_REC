@@ -22,5 +22,15 @@ namespace Tuyendung.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHUONGPHAM\\SQLEXPRESS;Initial Catalog=QLTD;Integrated Security=True")]
+        public string QLTDConnectionString {
+            get {
+                return ((string)(this["QLTDConnectionString"]));
+            }
+        }
     }
 }

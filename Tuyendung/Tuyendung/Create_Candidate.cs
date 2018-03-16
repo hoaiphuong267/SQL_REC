@@ -60,69 +60,53 @@ namespace Tuyendung
             frmcc.ShowDialog();
             this.Close();
         }
-        private void ketnoicsdl()
+        //private void ketnoicsdl()
+        //{
+        //    cnn.Open();
+        //    string sql = "select * from Candidate"; 
+        //    SqlCommand com = new SqlCommand(sql, cnn); 
+        //    com.CommandType = CommandType.Text;
+        //    SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+        //    DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+        //    da.Fill(dt);  // đổ dữ liệu vào kho
+        //    cnn.Close();  // đóng kết nối
+        //    dgv_createCandidate.DataSource = dt;
+        //}
+        //ham lam moi
+        private void ClearAllText(Control con)
         {
-            cnn.Open();
-            string sql = "select * from Candidate"; 
-            SqlCommand com = new SqlCommand(sql, cnn); 
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);  // đổ dữ liệu vào kho
-            cnn.Close();  // đóng kết nối
-            dgv_createCandidate.DataSource = dt;
-          
-            //dgv_.DataSource = dt; //đổ dữ liệu vào datagridview
-            //txtMVTT.Enabled = false;
-            //txtMVTT.Text = "ID Autonumber";
-            //txtMDKTuyen.Enabled = false;
-            //txtMDKTuyen.Text = "ID Autonumber";
-
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+                else
+                    ClearAllText(c);
+            }
         }
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            //SaveFileDialog dlg1 = new SaveFileDialog();
-            //dlg1.Filter = "Image file (*.jpg;*jpeg;*.gif;*.bmp;*.png)|*.jpg;*jpeg;*.gì;*.bmp;*.png|"
-            //        + "jpeg file (*.jpeg,*.jpg)|*.jpeg,*.jpg|"
-            //        + "gif file (*.gif)|*.gif|"
-            //        + "bmp file (*.bmp)|*.bmp|"
-            //        + "png file (*.png)|*.png|"
-            //        + "All file (*.*)|*.*";
-            ////mac dinh load là png
-            //ImageFormat fomat = ImageFormat.Png;
-            //if (dlg1.ShowDialog() == DialogResult.OK)
-            //{
-            //    string ex = Path.GetExtension(dlg1.FileName);
-            //    switch (ex)
-            //    {
-            //        case ".jpg":
-            //            fomat = ImageFormat.Jpeg;
-            //            break;
-            //        case ".jpeg":
-            //            fomat = ImageFormat.Jpeg;
-            //            break;
-            //        case ".git":
-            //            fomat = ImageFormat.Gif;
-            //            break;
-            //        case ".png":
-            //            fomat = ImageFormat.Png;
-            //            break;
-            //        case ".bmp":
-            //            fomat = ImageFormat.Bmp;
-            //            break;
-            //    }
-            //    pic_1.Image.Save(dlg1.FileName, fomat);
-            //}
-            cnn.Open();
-           // string ins = "INSERT INTO JobVancany(DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName ) VALUES ('" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "')";
-            //SqlCommand cmd = new SqlCommand(ins, cnn);
-            MessageBox.Show("Thao tác thành công");
-            cnn.Close();
-
-            
-        }
-
-       
-
+            try
+            {
+                MemoryStream st = new MemoryStream();
+                pic_1.Image.Save(st, ImageFormat.Jpeg);
+                //anh luu xuong database bat buoc con nhung field khac?
+                MyImgDataContext myDB = new MyImgDataContext();
+                Candidate cd = new Candidate();
+                cd.CandidateName = txt_CandidateName.Text;
+                cd.CodeCandidate = txt_CodeCandidate.Text;
+                cd.DateBirthday = dtime_DateOfbrith.Value;
+                cd.Genth = txt_Gender.Text;
+                cd.Phone = txt_Phone.Text;
+                cd.Img = st.ToArray();
+                myDB.Candidates.InsertOnSubmit(cd);
+                myDB.SubmitChanges();
+                MessageBox.Show("Thao tác thành công");
+                ClearAllText(this);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thao tác không thành công");
+            }       
+        }     
     }
 }

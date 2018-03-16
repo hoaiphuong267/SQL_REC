@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.bt_Save = new System.Windows.Forms.Button();
             this.bt_Comeback_candidate = new System.Windows.Forms.Button();
             this.bt_Image = new System.Windows.Forms.Button();
             this.pic_1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_JobVancancyID = new System.Windows.Forms.TextBox();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
+            this.txt_Gender = new System.Windows.Forms.TextBox();
+            this.dtime_DateOfbrith = new System.Windows.Forms.DateTimePicker();
+            this.txt_CandidateName = new System.Windows.Forms.TextBox();
             this.txt_CodeCandidate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,23 +47,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_createCandidate = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bt_Save);
-            this.groupBox1.Controls.Add(this.bt_Comeback_candidate);
+            this.groupBox1.Controls.Add(this.txt_Email);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.bt_Image);
             this.groupBox1.Controls.Add(this.pic_1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_JobVancancyID);
+            this.groupBox1.Controls.Add(this.txt_Phone);
+            this.groupBox1.Controls.Add(this.txt_Gender);
+            this.groupBox1.Controls.Add(this.dtime_DateOfbrith);
+            this.groupBox1.Controls.Add(this.txt_CandidateName);
             this.groupBox1.Controls.Add(this.txt_CodeCandidate);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -73,17 +73,33 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1001, 239);
+            this.groupBox1.Size = new System.Drawing.Size(707, 340);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo mới Hồ sơ ứng viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(135, 252);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(225, 32);
+            this.txt_Email.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 255);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 23);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Email";
+            // 
             // bt_Save
             // 
             this.bt_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Save.Location = new System.Drawing.Point(16, 171);
+            this.bt_Save.Location = new System.Drawing.Point(195, 346);
             this.bt_Save.Name = "bt_Save";
             this.bt_Save.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bt_Save.Size = new System.Drawing.Size(121, 41);
@@ -96,7 +112,7 @@
             // 
             this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Comeback_candidate.Location = new System.Drawing.Point(145, 171);
+            this.bt_Comeback_candidate.Location = new System.Drawing.Point(324, 346);
             this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
             this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
@@ -110,7 +126,7 @@
             this.bt_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Image.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Image.Location = new System.Drawing.Point(792, 186);
+            this.bt_Image.Location = new System.Drawing.Point(479, 203);
             this.bt_Image.Name = "bt_Image";
             this.bt_Image.Size = new System.Drawing.Size(156, 26);
             this.bt_Image.TabIndex = 18;
@@ -121,52 +137,52 @@
             // pic_1
             // 
             this.pic_1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pic_1.Location = new System.Drawing.Point(743, 12);
+            this.pic_1.Location = new System.Drawing.Point(430, 29);
             this.pic_1.Name = "pic_1";
             this.pic_1.Size = new System.Drawing.Size(249, 168);
             this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_1.TabIndex = 17;
             this.pic_1.TabStop = false;
             // 
-            // textBox5
+            // txt_JobVancancyID
             // 
-            this.textBox5.Location = new System.Drawing.Point(512, 112);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(225, 32);
-            this.textBox5.TabIndex = 14;
+            this.txt_JobVancancyID.Location = new System.Drawing.Point(135, 216);
+            this.txt_JobVancancyID.Name = "txt_JobVancancyID";
+            this.txt_JobVancancyID.Size = new System.Drawing.Size(225, 32);
+            this.txt_JobVancancyID.TabIndex = 14;
             // 
-            // textBox3
+            // txt_Phone
             // 
-            this.textBox3.Location = new System.Drawing.Point(512, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 32);
-            this.textBox3.TabIndex = 12;
+            this.txt_Phone.Location = new System.Drawing.Point(135, 180);
+            this.txt_Phone.Name = "txt_Phone";
+            this.txt_Phone.Size = new System.Drawing.Size(225, 32);
+            this.txt_Phone.TabIndex = 12;
             // 
-            // textBox2
+            // txt_Gender
             // 
-            this.textBox2.Location = new System.Drawing.Point(512, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 32);
-            this.textBox2.TabIndex = 11;
+            this.txt_Gender.Location = new System.Drawing.Point(135, 145);
+            this.txt_Gender.Name = "txt_Gender";
+            this.txt_Gender.Size = new System.Drawing.Size(225, 32);
+            this.txt_Gender.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dtime_DateOfbrith
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 112);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(245, 32);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtime_DateOfbrith.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtime_DateOfbrith.Location = new System.Drawing.Point(135, 108);
+            this.dtime_DateOfbrith.Name = "dtime_DateOfbrith";
+            this.dtime_DateOfbrith.Size = new System.Drawing.Size(156, 32);
+            this.dtime_DateOfbrith.TabIndex = 10;
             // 
-            // textBox1
+            // txt_CandidateName
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 32);
-            this.textBox1.TabIndex = 9;
+            this.txt_CandidateName.Location = new System.Drawing.Point(135, 35);
+            this.txt_CandidateName.Name = "txt_CandidateName";
+            this.txt_CandidateName.Size = new System.Drawing.Size(245, 32);
+            this.txt_CandidateName.TabIndex = 9;
             // 
             // txt_CodeCandidate
             // 
-            this.txt_CodeCandidate.Location = new System.Drawing.Point(135, 41);
+            this.txt_CodeCandidate.Location = new System.Drawing.Point(135, 70);
             this.txt_CodeCandidate.Name = "txt_CodeCandidate";
             this.txt_CodeCandidate.Size = new System.Drawing.Size(245, 32);
             this.txt_CodeCandidate.TabIndex = 8;
@@ -174,7 +190,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(404, 118);
+            this.label7.Location = new System.Drawing.Point(16, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 23);
             this.label7.TabIndex = 7;
@@ -183,7 +199,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(404, 79);
+            this.label6.Location = new System.Drawing.Point(16, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 23);
             this.label6.TabIndex = 5;
@@ -201,7 +217,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(404, 44);
+            this.label4.Location = new System.Drawing.Point(16, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 23);
             this.label4.TabIndex = 3;
@@ -225,29 +241,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã ứng viên";
             // 
-            // dgv_createCandidate
-            // 
-            this.dgv_createCandidate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_createCandidate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_createCandidate.Location = new System.Drawing.Point(0, 221);
-            this.dgv_createCandidate.Name = "dgv_createCandidate";
-            this.dgv_createCandidate.Size = new System.Drawing.Size(1001, 290);
-            this.dgv_createCandidate.TabIndex = 1;
-            // 
             // Create_Candidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 511);
-            this.Controls.Add(this.dgv_createCandidate);
+            this.ClientSize = new System.Drawing.Size(707, 399);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.bt_Save);
+            this.Controls.Add(this.bt_Comeback_candidate);
             this.Name = "Create_Candidate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Candidate";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,17 +267,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_JobVancancyID;
+        private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.TextBox txt_Gender;
+        private System.Windows.Forms.DateTimePicker dtime_DateOfbrith;
+        private System.Windows.Forms.TextBox txt_CandidateName;
         private System.Windows.Forms.TextBox txt_CodeCandidate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dgv_createCandidate;
         private System.Windows.Forms.PictureBox pic_1;
         private System.Windows.Forms.Button bt_Image;
         private System.Windows.Forms.Button bt_Comeback_candidate;
         private System.Windows.Forms.Button bt_Save;
+        private System.Windows.Forms.TextBox txt_Email;
+        private System.Windows.Forms.Label label3;
     }
 }
