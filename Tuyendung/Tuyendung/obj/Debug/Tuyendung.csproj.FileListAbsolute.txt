@@ -93,3 +93,6 @@ C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyend
 C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Properties.Resources.resources
 C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.RegisterForm.resources
 C:\Users\ozawa\Desktop\Tuyen dung 2\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe.config
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.exe
+C:\Users\ozawa\Desktop\New folder (4)\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
