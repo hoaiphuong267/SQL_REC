@@ -79,3 +79,6 @@ C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Regi
 C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.csproj.GenerateResource.Cache
 C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Create_Candidate.resources
 C:\Users\ACER\Desktop\REC_T\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.Candidate1.resources
+C:\Users\user\Desktop\Homework\SQL_REC\Tuyendung\Tuyendung\bin\Debug\Tuyendung.exe.config
+C:\Users\user\Desktop\Homework\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.exe
+C:\Users\user\Desktop\Homework\SQL_REC\Tuyendung\Tuyendung\obj\Debug\Tuyendung.pdb
