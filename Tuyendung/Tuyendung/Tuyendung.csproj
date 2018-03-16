@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="General\Employee.cs" />
     <Compile Include="General\UserLogin.cs" />
+    <Compile Include="Interview Creation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interview Creation.Designer.cs">
+      <DependentUpon>Interview Creation.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobVancany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <EmbeddedResource Include="Candidate1.resx">
       <DependentUpon>Candidate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interview Creation.resx">
+      <DependentUpon>Interview Creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobVancany.resx">
+      <DependentUpon>JobVancany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

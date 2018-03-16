@@ -147,5 +147,7 @@ namespace Tuyendung
             e.Row.Visible = false;
             //((JobVancany)e.Row.DataBoundItem).isDeleted = true;
         }
+
+        
     }
 }
