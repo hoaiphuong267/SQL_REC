@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_Candidate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
             this.bt_Image = new System.Windows.Forms.Button();
             this.pic_1 = new System.Windows.Forms.PictureBox();
             this.bt_addCandidate = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,6 +79,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo mới Hồ sơ ứng viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // bt_Comeback_candidate
+            // 
+            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Comeback_candidate.Location = new System.Drawing.Point(145, 171);
+            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
+            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
+            this.bt_Comeback_candidate.TabIndex = 19;
+            this.bt_Comeback_candidate.Text = "Quay về ";
+            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
+            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
             // 
             // bt_Image
             // 
@@ -143,7 +156,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(135, 112);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(131, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(245, 32);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // textBox1
@@ -222,19 +235,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1001, 290);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // bt_Comeback_candidate
-            // 
-            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Comeback_candidate.Location = new System.Drawing.Point(145, 171);
-            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
-            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
-            this.bt_Comeback_candidate.TabIndex = 19;
-            this.bt_Comeback_candidate.Text = "Quay về ";
-            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
-            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
             // 
             // Create_Candidate
             // 
