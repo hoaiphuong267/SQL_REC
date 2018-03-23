@@ -22,7 +22,7 @@ namespace Tuyendung
         private void ketnoicsdl()
         {
             cnn.Open();
-            string sql = "select * from JobVancany"; 
+            string sql = "select CodeJobVancany, JobVancanyName,DateStart, DateEnd, Soluong ,LevelInterview ,experience,Gender from JobVancany"; 
             SqlCommand com = new SqlCommand(sql, cnn); 
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -30,29 +30,20 @@ namespace Tuyendung
             da.Fill(dt); 
             cnn.Close();  
             dgvJobVancany.DataSource = dt; 
-            txtMVTT.Enabled = false;
-            txtMVTT.Text = "ID Autonumber";
-            txtMDKTuyen.Enabled = false;
-            txtMDKTuyen.Text = "ID Autonumber";
-
         }
 
         private void JobVancany_Load(object sender, EventArgs e)
         {
             ketnoicsdl();
+            
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
-            cnn.Open();
-            string ins = "INSERT INTO JobVancany(DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName ) VALUES ('" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "')";
-            SqlCommand cmd = new SqlCommand(ins, cnn);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Thêm Thành Cong");
-            cnn.Close();
-            ketnoicsdl();
+            tabControl1.SelectTab(tabNew);
+          
+
 
         }
 
@@ -67,8 +58,8 @@ namespace Tuyendung
                 dtDateEnd.Value = Convert.ToDateTime(row.Cells[3].Value.ToString());
                 txtSoluong.Text = row.Cells[4].Value.ToString();
                 txtSoVongTuyen.Text = row.Cells[5].Value.ToString();
-                txtMDKTuyen.Text = row.Cells[6].Value.ToString();
-
+                txtKN.Text = row.Cells[6].Value.ToString();
+                cbGT.Text = row.Cells[7].Value.ToString();
 
 
             }
@@ -77,7 +68,7 @@ namespace Tuyendung
         private void btnEdit_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins1 = "UPDATE JobVancany SET DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "'";
+            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', experience='" + txtKN.Text + "', Gender='" + cbGT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "'";
             SqlCommand cmd = new SqlCommand(ins1, cnn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Sửa Thành Cong");
@@ -94,11 +85,10 @@ namespace Tuyendung
                 if (result == DialogResult.Yes)
                 {
                     
-                    string ins1 = " UPDATE JobVancany SET isdelete = 1 WHERE JobVancanyID= '" + txtMVTT.Text + "'";
+                    string ins1 = "DELETE FROM JobVancany WHERE CodeJobVancany='" + txtMVTT.Text + "' ";
                     SqlCommand cmd = new SqlCommand(ins1, cnn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Xóa Thành Cong");
-                    //this.dgvJobVancany.Rows[index].Visible = false;
                     cnn.Close();
                     ketnoicsdl();
                 }
@@ -119,14 +109,15 @@ namespace Tuyendung
             if (!string.IsNullOrEmpty(txtTenVT.Text))
                 sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
             if (!string.IsNullOrEmpty(dtDateStart.Text))
-                sb.Append(" AND DateStart like '%" + dtDateStart.Text + "%'");
-            //if (!string.IsNullOrEmpty(dtDateEnd.Text))
-            //    sb.Append(" OR DateEnd like '%" + dtDateEnd.Text+ "%'");
+                sb.Append(" AND DateStart =" + dtDateStart.Value.ToString() + "");
+            if (!string.IsNullOrEmpty(dtDateEnd.Text))
+                sb.Append(" AND DateEnd =" + dtDateEnd.Value.ToString() + "");
             if (!string.IsNullOrEmpty(txtSoluong.Text))
                 sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
             if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))
                 sb.Append(" AND LevelInterview like '%" + txtSoVongTuyen.Text + "%'");
-            //sb.Append(";");
+            if (!string.IsNullOrEmpty(cbGT.Text))
+                sb.Append(" AND Gender like '%" + cbGT.Text + "%'");
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(sb.ToString(), cnn);
@@ -138,8 +129,11 @@ namespace Tuyendung
             {
                 MessageBox.Show(ex.Message);
             }
+
+            //var controls = new[] { txtTenVT, dtDateStart, dtDateEnd, txtSoluong, txt_city, txt_state, txt_PinCode };
+
         }
-       
+
 
         private void dgvJobVancany_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
@@ -148,6 +142,21 @@ namespace Tuyendung
             //((JobVancany)e.Row.DataBoundItem).isDeleted = true;
         }
 
-        
+        private void btNew_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+            string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,experience,Gender ) VALUES ('" + txtMVTT.Text + "','" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "','" + txtKN.Text + "','" + cbGT.Text + "')";
+            SqlCommand cmd = new SqlCommand(ins, cnn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Thêm Thành Cong");
+            cnn.Close();
+            ketnoicsdl();
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabJobVancacy);
+
+        }
     }
 }

@@ -1,8 +1,0 @@
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\bin\Debug\UnitTest.dll
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\bin\Debug\UnitTest.pdb
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\bin\Debug\Tuyendung.exe
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\bin\Debug\Tuyendung.pdb
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\obj\Debug\UnitTest.dll
-C:\Users\ozawa\Desktop\Tuyendung1\SQL_REC\Tuyendung\UnitTest\obj\Debug\UnitTest.pdb
