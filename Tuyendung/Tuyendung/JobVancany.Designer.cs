@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tabJobVancacy = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbGT = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtMVTT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtMDKTuyen = new System.Windows.Forms.TextBox();
+            this.txtKN = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoVongTuyen = new System.Windows.Forms.TextBox();
             this.txtSoluong = new System.Windows.Forms.TextBox();
@@ -48,29 +51,64 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_Date = new System.Windows.Forms.Label();
             this.dgvJobVancany = new System.Windows.Forms.DataGridView();
-            this.JobVancanyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobVancanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobVancanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LevelInterview = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobConditionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KinhNghiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabJobVancacy = new System.Windows.Forms.TabPage();
-            this.tabCandidate = new System.Windows.Forms.TabPage();
+            this.tabNew = new System.Windows.Forms.TabPage();
+            this.btBack = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btNew = new System.Windows.Forms.Button();
+            this.tabJobVancacy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabJobVancacy.SuspendLayout();
+            this.tabNew.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tabJobVancacy
+            // 
+            this.tabJobVancacy.Controls.Add(this.groupBox1);
+            this.tabJobVancacy.Controls.Add(this.dgvJobVancany);
+            this.tabJobVancacy.Location = new System.Drawing.Point(4, 22);
+            this.tabJobVancacy.Name = "tabJobVancacy";
+            this.tabJobVancacy.Padding = new System.Windows.Forms.Padding(3);
+            this.tabJobVancacy.Size = new System.Drawing.Size(987, 514);
+            this.tabJobVancacy.TabIndex = 0;
+            this.tabJobVancacy.Text = "Yêu cầu Tuyển Dụng";
+            this.tabJobVancacy.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbGT);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnDel);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.txtMVTT);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtMDKTuyen);
+            this.groupBox1.Controls.Add(this.txtKN);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtSoVongTuyen);
             this.groupBox1.Controls.Add(this.txtSoluong);
@@ -87,14 +125,36 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(974, 226);
+            this.groupBox1.Size = new System.Drawing.Size(974, 245);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin tuyển dụng";
             // 
+            // cbGT
+            // 
+            this.cbGT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGT.FormattingEnabled = true;
+            this.cbGT.Items.AddRange(new object[] {
+            "Nam",
+            "Nu"});
+            this.cbGT.Location = new System.Drawing.Point(479, 169);
+            this.cbGT.Name = "cbGT";
+            this.cbGT.Size = new System.Drawing.Size(173, 31);
+            this.cbGT.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(357, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 19);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Giới Tính";
+            // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(796, 190);
+            this.btnDel.Location = new System.Drawing.Point(861, 209);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(105, 30);
             this.btnDel.TabIndex = 19;
@@ -104,7 +164,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(685, 190);
+            this.btnEdit.Location = new System.Drawing.Point(739, 209);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(105, 30);
             this.btnEdit.TabIndex = 18;
@@ -129,12 +189,12 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Mã Vị Trí Tuyển";
             // 
-            // txtMDKTuyen
+            // txtKN
             // 
-            this.txtMDKTuyen.Location = new System.Drawing.Point(479, 64);
-            this.txtMDKTuyen.Name = "txtMDKTuyen";
-            this.txtMDKTuyen.Size = new System.Drawing.Size(173, 32);
-            this.txtMDKTuyen.TabIndex = 14;
+            this.txtKN.Location = new System.Drawing.Point(479, 64);
+            this.txtKN.Name = "txtKN";
+            this.txtKN.Size = new System.Drawing.Size(173, 32);
+            this.txtKN.TabIndex = 14;
             // 
             // label6
             // 
@@ -142,9 +202,9 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(346, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 19);
+            this.label6.Size = new System.Drawing.Size(89, 19);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Mã Điều kiện tuyển";
+            this.label6.Text = "Kinh Nghiệm";
             // 
             // txtSoVongTuyen
             // 
@@ -190,17 +250,16 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 162);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.Size = new System.Drawing.Size(116, 32);
             this.label3.TabIndex = 7;
             this.label3.Text = "Ngày kết thúc";
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(563, 190);
+            this.btnTimKiem.Location = new System.Drawing.Point(628, 209);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(105, 30);
             this.btnTimKiem.TabIndex = 6;
@@ -210,7 +269,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(443, 190);
+            this.btnAdd.Location = new System.Drawing.Point(517, 209);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(105, 30);
             this.btnAdd.TabIndex = 5;
@@ -258,25 +317,26 @@
             // 
             this.dgvJobVancany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJobVancany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.JobVancanyID,
+            this.JobVancanyCode,
             this.JobVancanyName,
             this.DateStart,
             this.DateEnd,
             this.Soluong,
             this.LevelInterview,
-            this.JobConditionID});
-            this.dgvJobVancany.Location = new System.Drawing.Point(121, 238);
+            this.KinhNghiem,
+            this.GioiTinh});
+            this.dgvJobVancany.Location = new System.Drawing.Point(104, 257);
             this.dgvJobVancany.Name = "dgvJobVancany";
-            this.dgvJobVancany.Size = new System.Drawing.Size(743, 270);
+            this.dgvJobVancany.Size = new System.Drawing.Size(845, 251);
             this.dgvJobVancany.TabIndex = 2;
             this.dgvJobVancany.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJobVancany_CellClick);
             this.dgvJobVancany.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvJobVancany_UserDeletingRow);
             // 
-            // JobVancanyID
+            // JobVancanyCode
             // 
-            this.JobVancanyID.DataPropertyName = "JobVancanyID";
-            this.JobVancanyID.HeaderText = "Mã Vị Trí Tuyển";
-            this.JobVancanyID.Name = "JobVancanyID";
+            this.JobVancanyCode.DataPropertyName = "CodeJobVancany";
+            this.JobVancanyCode.HeaderText = "Mã Vị Trí Tuyển";
+            this.JobVancanyCode.Name = "JobVancanyCode";
             // 
             // JobVancanyName
             // 
@@ -308,43 +368,231 @@
             this.LevelInterview.HeaderText = "Số vòng phỏng vấn";
             this.LevelInterview.Name = "LevelInterview";
             // 
-            // JobConditionID
+            // KinhNghiem
             // 
-            this.JobConditionID.DataPropertyName = "JobConditionID";
-            this.JobConditionID.HeaderText = "Mã ĐK Tuyển";
-            this.JobConditionID.Name = "JobConditionID";
+            this.KinhNghiem.DataPropertyName = "experience";
+            this.KinhNghiem.HeaderText = "Kinh Nghiệm";
+            this.KinhNghiem.Name = "KinhNghiem";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "Gender";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabJobVancacy);
-            this.tabControl1.Controls.Add(this.tabCandidate);
+            this.tabControl1.Controls.Add(this.tabNew);
             this.tabControl1.Location = new System.Drawing.Point(-1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(995, 540);
             this.tabControl1.TabIndex = 3;
             // 
-            // tabJobVancacy
+            // tabNew
             // 
-            this.tabJobVancacy.Controls.Add(this.groupBox1);
-            this.tabJobVancacy.Controls.Add(this.dgvJobVancany);
-            this.tabJobVancacy.Location = new System.Drawing.Point(4, 22);
-            this.tabJobVancacy.Name = "tabJobVancacy";
-            this.tabJobVancacy.Padding = new System.Windows.Forms.Padding(3);
-            this.tabJobVancacy.Size = new System.Drawing.Size(987, 514);
-            this.tabJobVancacy.TabIndex = 0;
-            this.tabJobVancacy.Text = "Yêu cầu Tuyển Dụng";
-            this.tabJobVancacy.UseVisualStyleBackColor = true;
+            this.tabNew.Controls.Add(this.btBack);
+            this.tabNew.Controls.Add(this.groupBox2);
+            this.tabNew.Controls.Add(this.btNew);
+            this.tabNew.Location = new System.Drawing.Point(4, 22);
+            this.tabNew.Name = "tabNew";
+            this.tabNew.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNew.Size = new System.Drawing.Size(987, 514);
+            this.tabNew.TabIndex = 1;
+            this.tabNew.Text = "Tạo mới Hồ Sơ Vị Trí Tuyển";
+            this.tabNew.UseVisualStyleBackColor = true;
             // 
-            // tabCandidate
+            // btBack
             // 
-            this.tabCandidate.Location = new System.Drawing.Point(4, 22);
-            this.tabCandidate.Name = "tabCandidate";
-            this.tabCandidate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCandidate.Size = new System.Drawing.Size(987, 514);
-            this.tabCandidate.TabIndex = 1;
-            this.tabCandidate.Text = "Hồ Sơ Ứng Viên";
-            this.tabCandidate.UseVisualStyleBackColor = true;
+            this.btBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBack.Location = new System.Drawing.Point(679, 285);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(128, 41);
+            this.btBack.TabIndex = 6;
+            this.btBack.Text = "Quay lại";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(0, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(974, 252);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tạo mới Vị Trí Tuyển";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Nam",
+            "Nu"});
+            this.comboBox1.Location = new System.Drawing.Point(479, 169);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(173, 31);
+            this.comboBox1.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(357, 175);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 19);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Giới Tính";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(128, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 32);
+            this.textBox1.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 70);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 19);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Mã Vị Trí Tuyển";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(479, 64);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(173, 32);
+            this.textBox2.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(346, 70);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 19);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Kinh Nghiệm";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(774, 117);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(192, 32);
+            this.textBox3.TabIndex = 12;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(479, 117);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(173, 32);
+            this.textBox4.TabIndex = 11;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(128, 162);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(658, 123);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 19);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Số vòng tuyển";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(346, 123);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 19);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Số lượng tuyển";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 162);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 32);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Ngày kết thúc";
+            // 
+            // textBox5
+            // 
+            this.textBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox5.Location = new System.Drawing.Point(774, 57);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(190, 32);
+            this.textBox5.TabIndex = 4;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(128, 117);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 32);
+            this.dateTimePicker2.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(658, 63);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(110, 19);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Tên Vị Trí Tuyển";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 117);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(111, 19);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Ngày đăng tuyển";
+            // 
+            // btNew
+            // 
+            this.btNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNew.Location = new System.Drawing.Point(524, 285);
+            this.btNew.Name = "btNew";
+            this.btNew.Size = new System.Drawing.Size(128, 41);
+            this.btNew.TabIndex = 5;
+            this.btNew.Text = "Tạo mới";
+            this.btNew.UseVisualStyleBackColor = true;
+            this.btNew.Click += new System.EventHandler(this.btNew_Click);
             // 
             // JobVancany
             // 
@@ -358,46 +606,71 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JobVancany";
             this.Load += new System.EventHandler(this.JobVancany_Load);
+            this.tabJobVancacy.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabJobVancacy.ResumeLayout(false);
+            this.tabNew.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TabPage tabJobVancacy;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvJobVancany;
-        private System.Windows.Forms.TextBox txtTenVT;
-        private System.Windows.Forms.DateTimePicker dtDateStart;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lb_Date;
+        private System.Windows.Forms.ComboBox cbGT;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtMVTT;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtKN;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSoVongTuyen;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.DateTimePicker dtDateEnd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMDKTuyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyID;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtTenVT;
+        private System.Windows.Forms.DateTimePicker dtDateStart;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_Date;
+        private System.Windows.Forms.DataGridView dgvJobVancany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateEnd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn LevelInterview;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobConditionID;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMVTT;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KinhNghiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabJobVancacy;
-        private System.Windows.Forms.TabPage tabCandidate;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.TabPage tabNew;
+        private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btNew;
     }
 }

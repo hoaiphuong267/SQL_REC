@@ -95,7 +95,7 @@ namespace Tuyendung
                 cd.CandidateName = txt_CandidateName.Text;
                 cd.CodeCandidate = txt_CodeCandidate.Text;
                 cd.DateBirthday = dtime_DateOfbrith.Value;
-                cd.Genth = txt_Gender.Text;
+                //cd.Gender = txt_Gender.Text;
                 cd.Phone = txt_Phone.Text;
                 cd.Img = st.ToArray();
                 myDB.Candidates.InsertOnSubmit(cd);

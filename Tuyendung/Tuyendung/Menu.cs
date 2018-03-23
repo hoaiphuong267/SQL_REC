@@ -20,7 +20,8 @@ namespace Tuyendung
         private void Menu_Load(object sender, EventArgs e)
         {
             timer1.Start();
-           
+            
+
         }
 
        
@@ -43,6 +44,7 @@ namespace Tuyendung
 
      private void bt_Candidate_Click(object sender, EventArgs e)
         {
+            this.panel3.Controls.Clear();
             Candidate1 frmCandidate = new Candidate1();
             frmCandidate.TopLevel = false;
             panel3.Controls.Add(frmCandidate);
@@ -54,6 +56,7 @@ namespace Tuyendung
 
         private void btnJobVancany_Click(object sender, EventArgs e)
         {
+            this.panel3.Controls.Clear();
             JobVancany frmJobVancacy = new JobVancany();
             frmJobVancacy.TopLevel = false;
             panel3.Controls.Add(frmJobVancacy);
