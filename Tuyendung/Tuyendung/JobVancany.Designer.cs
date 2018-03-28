@@ -63,20 +63,20 @@
             this.tabNew = new System.Windows.Forms.TabPage();
             this.btBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodeJob = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtexp = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtSoVong = new System.Windows.Forms.TextBox();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.dtEnd = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btNew = new System.Windows.Forms.Button();
@@ -416,20 +416,20 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbGioiTinh);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtCodeJob);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtexp);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.txtSoVong);
+            this.groupBox2.Controls.Add(this.txtSL);
+            this.groupBox2.Controls.Add(this.dtEnd);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.txtName);
+            this.groupBox2.Controls.Add(this.dtStart);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -440,17 +440,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tạo mới Vị Trí Tuyển";
             // 
-            // comboBox1
+            // cbGioiTinh
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbGioiTinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nu"});
-            this.comboBox1.Location = new System.Drawing.Point(479, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 31);
-            this.comboBox1.TabIndex = 21;
+            this.cbGioiTinh.Location = new System.Drawing.Point(479, 169);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(173, 31);
+            this.cbGioiTinh.TabIndex = 21;
             // 
             // label8
             // 
@@ -462,12 +462,12 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Giới Tính";
             // 
-            // textBox1
+            // txtCodeJob
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 32);
-            this.textBox1.TabIndex = 17;
+            this.txtCodeJob.Location = new System.Drawing.Point(128, 64);
+            this.txtCodeJob.Name = "txtCodeJob";
+            this.txtCodeJob.Size = new System.Drawing.Size(200, 32);
+            this.txtCodeJob.TabIndex = 17;
             // 
             // label9
             // 
@@ -479,12 +479,12 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Mã Vị Trí Tuyển";
             // 
-            // textBox2
+            // txtexp
             // 
-            this.textBox2.Location = new System.Drawing.Point(479, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 32);
-            this.textBox2.TabIndex = 14;
+            this.txtexp.Location = new System.Drawing.Point(479, 64);
+            this.txtexp.Name = "txtexp";
+            this.txtexp.Size = new System.Drawing.Size(173, 32);
+            this.txtexp.TabIndex = 14;
             // 
             // label10
             // 
@@ -496,27 +496,27 @@
             this.label10.TabIndex = 13;
             this.label10.Text = "Kinh Nghiệm";
             // 
-            // textBox3
+            // txtSoVong
             // 
-            this.textBox3.Location = new System.Drawing.Point(774, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 32);
-            this.textBox3.TabIndex = 12;
+            this.txtSoVong.Location = new System.Drawing.Point(774, 117);
+            this.txtSoVong.Name = "txtSoVong";
+            this.txtSoVong.Size = new System.Drawing.Size(192, 32);
+            this.txtSoVong.TabIndex = 12;
             // 
-            // textBox4
+            // txtSL
             // 
-            this.textBox4.Location = new System.Drawing.Point(479, 117);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 32);
-            this.textBox4.TabIndex = 11;
+            this.txtSL.Location = new System.Drawing.Point(479, 117);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(173, 32);
+            this.txtSL.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dtEnd
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 162);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtEnd.Location = new System.Drawing.Point(128, 162);
+            this.dtEnd.Name = "dtEnd";
+            this.dtEnd.Size = new System.Drawing.Size(200, 32);
+            this.dtEnd.TabIndex = 10;
             // 
             // label11
             // 
@@ -547,21 +547,21 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "Ngày kết thúc";
             // 
-            // textBox5
+            // txtName
             // 
-            this.textBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox5.Location = new System.Drawing.Point(774, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(190, 32);
-            this.textBox5.TabIndex = 4;
+            this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtName.Location = new System.Drawing.Point(774, 57);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(190, 32);
+            this.txtName.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // dtStart
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(128, 117);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtStart.Location = new System.Drawing.Point(128, 117);
+            this.dtStart.Name = "dtStart";
+            this.dtStart.Size = new System.Drawing.Size(200, 32);
+            this.dtStart.TabIndex = 2;
             // 
             // label14
             // 
@@ -655,20 +655,20 @@
         private System.Windows.Forms.TabPage tabNew;
         private System.Windows.Forms.Button btBack;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodeJob;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtexp;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtSoVong;
+        private System.Windows.Forms.TextBox txtSL;
+        private System.Windows.Forms.DateTimePicker dtEnd;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.DateTimePicker dtStart;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btNew;
