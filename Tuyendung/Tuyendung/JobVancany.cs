@@ -145,7 +145,7 @@ namespace Tuyendung
         private void btNew_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,experience,Gender ) VALUES ('" + txtMVTT.Text + "','" + dtDateStart.Value + "','" + dtDateEnd.Value + "','" + txtSoluong.Text + "','" + txtSoVongTuyen.Text + "','" + txtTenVT.Text + "','" + txtKN.Text + "','" + cbGT.Text + "')";
+            string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,experience,Gender ) VALUES ('" + txtCodeJob.Text + "','" + dtStart.Value + "','" + dtEnd.Value + "','" + txtSL.Text + "','" + txtSoVong.Text + "','" + txtName.Text + "','" + txtexp.Text + "','" + cbGioiTinh.Text + "')";
             SqlCommand cmd = new SqlCommand(ins, cnn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Thêm Thành Cong");
