@@ -14,6 +14,7 @@ namespace Tuyendung
     public partial class JobVancany : Form
     {
         SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        DataTable dt;
         public JobVancany()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace Tuyendung
 
         private void JobVancany_Load(object sender, EventArgs e)
         {
+            
             ketnoicsdl();
             
 
@@ -84,13 +86,16 @@ namespace Tuyendung
                 DialogResult result = MessageBox.Show("Bạn muốn xóa?", "Yes or No", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    
-                    string ins1 = "DELETE FROM JobVancany WHERE CodeJobVancany='" + txtMVTT.Text + "' ";
-                    SqlCommand cmd = new SqlCommand(ins1, cnn);
-                    cmd.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand("select CodeJobVancany, JobVancanyName, DateStart, DateEnd, Soluong, LevelInterview, experience, Gender from JobVancany WHERE isdelete = '0'",cnn);
+                    SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                    SqlCommandBuilder BD = new SqlCommandBuilder(DA);
+                    SqlCommand ODel = new SqlCommand("UPDATE JobVancany SET isdelete = '1' WHERE CodeJobVancany='" + txtMVTT.Text + "' ",cnn);
+                    DA.UpdateCommand = ODel;
+                    DA.Update(dt);
                     MessageBox.Show("Xóa Thành Cong");
                     cnn.Close();
-                    ketnoicsdl();
+                   
+                    //ketnoicsdl();
                 }
             }
             catch (Exception ex)
@@ -109,9 +114,9 @@ namespace Tuyendung
             if (!string.IsNullOrEmpty(txtTenVT.Text))
                 sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
             if (!string.IsNullOrEmpty(dtDateStart.Text))
-                sb.Append(" AND DateStart =" + dtDateStart.Value.ToString() + "");
+                sb.Append(" AND DateStart >=" + dtDateStart.Value.ToString("MM/dd/yyyy") + "");
             if (!string.IsNullOrEmpty(dtDateEnd.Text))
-                sb.Append(" AND DateEnd =" + dtDateEnd.Value.ToString() + "");
+                sb.Append(" AND DateEnd <" + dtDateEnd.Value.ToString("MM/dd/yyyy") + "");
             if (!string.IsNullOrEmpty(txtSoluong.Text))
                 sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
             if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))

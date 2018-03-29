@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabJobVancacy = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbGT = new System.Windows.Forms.ComboBox();
@@ -80,12 +81,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btNew = new System.Windows.Forms.Button();
+            this.jobVancanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabJobVancacy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNew.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobVancanyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabJobVancacy
@@ -132,7 +135,11 @@
             // 
             // cbGT
             // 
+            this.cbGT.AutoCompleteCustomSource.AddRange(new string[] {
+            "Nam",
+            "Nữ"});
             this.cbGT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbGT.FormattingEnabled = true;
             this.cbGT.Items.AddRange(new object[] {
             "Nam",
@@ -287,11 +294,12 @@
             // 
             // dtDateStart
             // 
-            this.dtDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDateStart.Location = new System.Drawing.Point(128, 117);
             this.dtDateStart.Name = "dtDateStart";
             this.dtDateStart.Size = new System.Drawing.Size(200, 32);
             this.dtDateStart.TabIndex = 2;
+            this.dtDateStart.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -315,6 +323,7 @@
             // 
             // dgvJobVancany
             // 
+            this.dgvJobVancany.AutoGenerateColumns = false;
             this.dgvJobVancany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJobVancany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.JobVancanyCode,
@@ -325,6 +334,7 @@
             this.LevelInterview,
             this.KinhNghiem,
             this.GioiTinh});
+            this.dgvJobVancany.DataSource = this.jobVancanyBindingSource;
             this.dgvJobVancany.Location = new System.Drawing.Point(104, 257);
             this.dgvJobVancany.Name = "dgvJobVancany";
             this.dgvJobVancany.Size = new System.Drawing.Size(845, 251);
@@ -672,5 +682,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btNew;
+        private System.Windows.Forms.BindingSource jobVancanyBindingSource;
     }
 }
