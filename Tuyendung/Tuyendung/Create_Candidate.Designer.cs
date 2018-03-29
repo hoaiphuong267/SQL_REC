@@ -31,13 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bt_Save = new System.Windows.Forms.Button();
-            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
             this.bt_Image = new System.Windows.Forms.Button();
             this.pic_1 = new System.Windows.Forms.PictureBox();
-            this.txt_JobVancancyID = new System.Windows.Forms.TextBox();
             this.txt_Phone = new System.Windows.Forms.TextBox();
-            this.txt_Gender = new System.Windows.Forms.TextBox();
             this.dtime_DateOfbrith = new System.Windows.Forms.DateTimePicker();
             this.txt_CandidateName = new System.Windows.Forms.TextBox();
             this.txt_CodeCandidate = new System.Windows.Forms.TextBox();
@@ -47,19 +43,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.bt_Save = new System.Windows.Forms.Button();
+            this.bt_Comeback_candidate = new System.Windows.Forms.Button();
+            this.cb_JobVancanyID = new System.Windows.Forms.ComboBox();
+            this.cb_Gender = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cb_Language = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_Language);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cb_Gender);
+            this.groupBox1.Controls.Add(this.cb_JobVancanyID);
             this.groupBox1.Controls.Add(this.txt_Email);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.bt_Image);
             this.groupBox1.Controls.Add(this.pic_1);
-            this.groupBox1.Controls.Add(this.txt_JobVancancyID);
             this.groupBox1.Controls.Add(this.txt_Phone);
-            this.groupBox1.Controls.Add(this.txt_Gender);
             this.groupBox1.Controls.Add(this.dtime_DateOfbrith);
             this.groupBox1.Controls.Add(this.txt_CandidateName);
             this.groupBox1.Controls.Add(this.txt_CodeCandidate);
@@ -95,32 +99,6 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Email";
             // 
-            // bt_Save
-            // 
-            this.bt_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Save.Location = new System.Drawing.Point(195, 346);
-            this.bt_Save.Name = "bt_Save";
-            this.bt_Save.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_Save.Size = new System.Drawing.Size(121, 41);
-            this.bt_Save.TabIndex = 21;
-            this.bt_Save.Text = "Lưu";
-            this.bt_Save.UseVisualStyleBackColor = true;
-            this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
-            // 
-            // bt_Comeback_candidate
-            // 
-            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Comeback_candidate.Location = new System.Drawing.Point(324, 346);
-            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
-            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
-            this.bt_Comeback_candidate.TabIndex = 19;
-            this.bt_Comeback_candidate.Text = "Quay về ";
-            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
-            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
-            // 
             // bt_Image
             // 
             this.bt_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -143,13 +121,7 @@
             this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_1.TabIndex = 17;
             this.pic_1.TabStop = false;
-            // 
-            // txt_JobVancancyID
-            // 
-            this.txt_JobVancancyID.Location = new System.Drawing.Point(135, 216);
-            this.txt_JobVancancyID.Name = "txt_JobVancancyID";
-            this.txt_JobVancancyID.Size = new System.Drawing.Size(225, 32);
-            this.txt_JobVancancyID.TabIndex = 14;
+            this.pic_1.Click += new System.EventHandler(this.pic_1_Click);
             // 
             // txt_Phone
             // 
@@ -157,13 +129,6 @@
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(225, 32);
             this.txt_Phone.TabIndex = 12;
-            // 
-            // txt_Gender
-            // 
-            this.txt_Gender.Location = new System.Drawing.Point(135, 145);
-            this.txt_Gender.Name = "txt_Gender";
-            this.txt_Gender.Size = new System.Drawing.Size(225, 32);
-            this.txt_Gender.TabIndex = 11;
             // 
             // dtime_DateOfbrith
             // 
@@ -241,6 +206,94 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã ứng viên";
             // 
+            // bt_Save
+            // 
+            this.bt_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Save.Location = new System.Drawing.Point(195, 346);
+            this.bt_Save.Name = "bt_Save";
+            this.bt_Save.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_Save.Size = new System.Drawing.Size(121, 41);
+            this.bt_Save.TabIndex = 21;
+            this.bt_Save.Text = "Lưu";
+            this.bt_Save.UseVisualStyleBackColor = true;
+            this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
+            // 
+            // bt_Comeback_candidate
+            // 
+            this.bt_Comeback_candidate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Comeback_candidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Comeback_candidate.Location = new System.Drawing.Point(324, 346);
+            this.bt_Comeback_candidate.Name = "bt_Comeback_candidate";
+            this.bt_Comeback_candidate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_Comeback_candidate.Size = new System.Drawing.Size(121, 41);
+            this.bt_Comeback_candidate.TabIndex = 19;
+            this.bt_Comeback_candidate.Text = "Quay về ";
+            this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
+            this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
+            // 
+            // cb_JobVancanyID
+            // 
+            this.cb_JobVancanyID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_JobVancanyID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_JobVancanyID.FormattingEnabled = true;
+            this.cb_JobVancanyID.Location = new System.Drawing.Point(135, 216);
+            this.cb_JobVancanyID.Name = "cb_JobVancanyID";
+            this.cb_JobVancanyID.Size = new System.Drawing.Size(224, 31);
+            this.cb_JobVancanyID.TabIndex = 24;
+            // 
+            // cb_Gender
+            // 
+            this.cb_Gender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Gender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Gender.FormattingEnabled = true;
+            this.cb_Gender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.cb_Gender.Location = new System.Drawing.Point(136, 145);
+            this.cb_Gender.Name = "cb_Gender";
+            this.cb_Gender.Size = new System.Drawing.Size(224, 31);
+            this.cb_Gender.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 295);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 23);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Ngoại ngữ";
+            // 
+            // cb_Language
+            // 
+            this.cb_Language.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Language.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Language.FormattingEnabled = true;
+            this.cb_Language.Items.AddRange(new object[] {
+            "Anh văn bằng B",
+            "Anh văn bằng C",
+            "Toeic 300",
+            "Toeic 350",
+            "Toeic 400",
+            "Toeic 450",
+            "Toeic 500",
+            "Toeic 550",
+            "Toeic 600",
+            "Toeic 650",
+            "Toeic 700",
+            "Toeic 750",
+            "Toeic 800",
+            "Toeic 850",
+            "Toeic 900",
+            "Toeic 950",
+            "Tiếng Nhật B1",
+            "Tiếng Pháp"});
+            this.cb_Language.Location = new System.Drawing.Point(135, 292);
+            this.cb_Language.Name = "cb_Language";
+            this.cb_Language.Size = new System.Drawing.Size(224, 31);
+            this.cb_Language.TabIndex = 27;
+            // 
             // Create_Candidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +305,7 @@
             this.Name = "Create_Candidate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Candidate";
+            this.Load += new System.EventHandler(this.Create_Candidate_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).EndInit();
@@ -267,9 +321,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_JobVancancyID;
         private System.Windows.Forms.TextBox txt_Phone;
-        private System.Windows.Forms.TextBox txt_Gender;
         private System.Windows.Forms.DateTimePicker dtime_DateOfbrith;
         private System.Windows.Forms.TextBox txt_CandidateName;
         private System.Windows.Forms.TextBox txt_CodeCandidate;
@@ -280,5 +332,9 @@
         private System.Windows.Forms.Button bt_Save;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cb_JobVancanyID;
+        private System.Windows.Forms.ComboBox cb_Language;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cb_Gender;
     }
 }
