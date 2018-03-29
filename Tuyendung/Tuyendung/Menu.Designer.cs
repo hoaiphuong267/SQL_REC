@@ -137,10 +137,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(267, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1286, 131);
+            this.panel1.Size = new System.Drawing.Size(1020, 131);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -156,10 +155,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Tuyendung.Properties.Resources._1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(273, 131);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -178,6 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 711);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;

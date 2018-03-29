@@ -29,7 +29,7 @@ namespace Tuyendung
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += 5;
-            if (label1.Left >= (this.Width - 50))
+            if (label1.Left >= (this.Width - 30))
             {
                 timer1.Enabled = false;
                 label1.Left = 0;
