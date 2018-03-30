@@ -16,9 +16,7 @@ namespace Tuyendung
     public partial class Create_Candidate : Form
     {
         SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
-        string file = "";
-
-    
+        string file = "";   
         public Create_Candidate()
         {
             InitializeComponent();
@@ -81,17 +79,22 @@ namespace Tuyendung
         {
             foreach (Control c in con.Controls)
             {
-                if (c is TextBox)
-                    ((TextBox)c).Clear();
+                if (c is TextBox || c is ComboBox && (pic_1.Image != null))
+                {
+                    c.Text = "";
+                    //pic_1.Image.Dispose();
+                    pic_1.Image = null;
+                }
                 else
                     ClearAllText(c);
             }
         }
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            cnn.Open();
+            //cnn.Open();
             try
             {
+                cnn.Open();
                 byte[] image = null;
                 FileStream str = new FileStream(file,FileMode.Open,FileAccess.Read);
                 BinaryReader brs = new BinaryReader(str);
@@ -104,6 +107,7 @@ namespace Tuyendung
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm Thành Cong");
                 cnn.Close();
+                ClearAllText(this);
             }
             catch (Exception ex)
             {
@@ -114,11 +118,9 @@ namespace Tuyendung
         private void txt_JobVancancyID_TextChanged(object sender, EventArgs e)
         {
         }
-
         private void pic_1_Click(object sender, EventArgs e)
         {
-        }
-        
+        }       
         private void Create_Candidate_Load(object sender, EventArgs e)
         {
             cnn.Open();

@@ -14,7 +14,7 @@ namespace Tuyendung
     public partial class JobVancany : Form
     {
         SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
-        DataTable dt;
+        //DataTable dt;
         public JobVancany()
         {
             InitializeComponent();
@@ -91,7 +91,7 @@ namespace Tuyendung
                     SqlCommandBuilder BD = new SqlCommandBuilder(DA);
                     SqlCommand ODel = new SqlCommand("UPDATE JobVancany SET isdelete = '1' WHERE CodeJobVancany='" + txtMVTT.Text + "' ",cnn);
                     DA.UpdateCommand = ODel;
-                    DA.Update(dt);
+//DA.Update(dt);
                     MessageBox.Show("Xóa Thành Cong");
                     cnn.Close();
                    

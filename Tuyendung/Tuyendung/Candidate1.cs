@@ -29,11 +29,15 @@ namespace Tuyendung
         }
         private void bt_Filter_Click(object sender, EventArgs e)
         {
-            ketnoicsdl();
+            //if (txt_CandidateName1.Text ="" and txt_)
+            //{
+            //     ketnoicsdl();
+            //}
+         
 
-            //sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE 1=1");
-            //if (!string.IsNullOrEmpty(txtTenVT.Text))
-            //    sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
+            var sb = new StringBuilder("select CandidateName,CodeCandidate,DateBirthday,Gender,Phone,Email,CandidateHistory,Status,JobVancanyID from Candidate");
+            if (!string.IsNullOrEmpty(txt_CandidateName1.Text))
+                sb.Append(" AND CandidateName like '%" + txt_CandidateName1.Text + "%'");
             //if (!string.IsNullOrEmpty(dtDateStart.Text))
             //    sb.Append(" AND DateStart like '%" + dtDateStart.Text + "%'");
             ////if (!string.IsNullOrEmpty(dtDateEnd.Text))
@@ -43,17 +47,17 @@ namespace Tuyendung
             //if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))
             //    sb.Append(" AND LevelInterview like '%" + txtSoVongTuyen.Text + "%'");
             //sb.Append(";");
-            //try
-            //{
-            //    SqlDataAdapter da = new SqlDataAdapter(sb.ToString(), cnn);
-            //    DataSet ds = new DataSet();
-            //    da.Fill(ds);
-            //    dgvJobVancany.DataSource = ds.Tables[0];
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sb.ToString(), cnn);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                dgv_createCandidate.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void ketnoicsdl()
         {
@@ -66,17 +70,13 @@ namespace Tuyendung
             da.Fill(dt);
             cnn.Close();
             dgv_createCandidate.DataSource = dt;
-           
-            //txtMVTT.Enabled = false;
-            //khong cho nhap 
-            //txtMVTT.Text = "ID Autonumber";
-            //txtMDKTuyen.Enabled = false;
-            //khong cho nhap 
-            //txtMDKTuyen.Text = "ID Autonumber";
+                      
         }
 
         private void Candidate1_Load(object sender, EventArgs e)
-        {          
+        {
+           // ketnoicsdl();
+
         }
        
 
