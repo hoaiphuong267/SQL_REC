@@ -70,7 +70,7 @@ namespace Tuyendung
         private void btnEdit_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', experience='" + txtKN.Text + "', Gender='" + cbGT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "'";
+            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', experience='" + txtKN.Text + "', Gender='" + cbGT.Text + "' WHERE isdelete = '0'";
             SqlCommand cmd = new SqlCommand(ins1, cnn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Sửa Thành Cong");
@@ -86,16 +86,12 @@ namespace Tuyendung
                 DialogResult result = MessageBox.Show("Bạn muốn xóa?", "Yes or No", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("select CodeJobVancany, JobVancanyName, DateStart, DateEnd, Soluong, LevelInterview, experience, Gender from JobVancany WHERE isdelete = '0'",cnn);
-                    SqlDataAdapter DA = new SqlDataAdapter(cmd);
-                    SqlCommandBuilder BD = new SqlCommandBuilder(DA);
-                    SqlCommand ODel = new SqlCommand("UPDATE JobVancany SET isdelete = '1' WHERE CodeJobVancany='" + txtMVTT.Text + "' ",cnn);
-                    DA.UpdateCommand = ODel;
-//DA.Update(dt);
+                    string ins = "UPDATE JobVancany SET isdelete = '1' WHERE CodeJobVancany='" + txtMVTT.Text + "' ";
+                    SqlCommand cmd = new SqlCommand(ins, cnn);
+                    cmd.ExecuteNonQuery();
                     MessageBox.Show("Xóa Thành Cong");
                     cnn.Close();
-                   
-                    //ketnoicsdl();
+                    ketnoicsdl();
                 }
             }
             catch (Exception ex)
@@ -110,7 +106,7 @@ namespace Tuyendung
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             //cnn.Open();
-            var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE 1=1");
+            var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE isdelete = '0'");
             if (!string.IsNullOrEmpty(txtTenVT.Text))
                 sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
             if (!string.IsNullOrEmpty(dtDateStart.Text))

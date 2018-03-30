@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabJobVancacy = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbGT = new System.Windows.Forms.ComboBox();
@@ -52,14 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_Date = new System.Windows.Forms.Label();
             this.dgvJobVancany = new System.Windows.Forms.DataGridView();
-            this.JobVancanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobVancanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LevelInterview = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KinhNghiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNew = new System.Windows.Forms.TabPage();
             this.btBack = new System.Windows.Forms.Button();
@@ -81,14 +72,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btNew = new System.Windows.Forms.Button();
-            this.jobVancanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabJobVancacy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNew.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jobVancanyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabJobVancacy
@@ -138,8 +127,8 @@
             this.cbGT.AutoCompleteCustomSource.AddRange(new string[] {
             "Nam",
             "Nữ"});
-            this.cbGT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbGT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGT.FormattingEnabled = true;
             this.cbGT.Items.AddRange(new object[] {
             "Nam",
@@ -231,6 +220,7 @@
             // 
             this.dtDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDateEnd.Location = new System.Drawing.Point(128, 162);
+            this.dtDateEnd.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             this.dtDateEnd.Name = "dtDateEnd";
             this.dtDateEnd.Size = new System.Drawing.Size(200, 32);
             this.dtDateEnd.TabIndex = 10;
@@ -296,6 +286,7 @@
             // 
             this.dtDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDateStart.Location = new System.Drawing.Point(128, 117);
+            this.dtDateStart.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             this.dtDateStart.Name = "dtDateStart";
             this.dtDateStart.Size = new System.Drawing.Size(200, 32);
             this.dtDateStart.TabIndex = 2;
@@ -323,72 +314,13 @@
             // 
             // dgvJobVancany
             // 
-            this.dgvJobVancany.AutoGenerateColumns = false;
             this.dgvJobVancany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobVancany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.JobVancanyCode,
-            this.JobVancanyName,
-            this.DateStart,
-            this.DateEnd,
-            this.Soluong,
-            this.LevelInterview,
-            this.KinhNghiem,
-            this.GioiTinh});
-            this.dgvJobVancany.DataSource = this.jobVancanyBindingSource;
             this.dgvJobVancany.Location = new System.Drawing.Point(104, 257);
             this.dgvJobVancany.Name = "dgvJobVancany";
             this.dgvJobVancany.Size = new System.Drawing.Size(845, 251);
             this.dgvJobVancany.TabIndex = 2;
             this.dgvJobVancany.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJobVancany_CellClick);
             this.dgvJobVancany.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvJobVancany_UserDeletingRow);
-            // 
-            // JobVancanyCode
-            // 
-            this.JobVancanyCode.DataPropertyName = "CodeJobVancany";
-            this.JobVancanyCode.HeaderText = "Mã Vị Trí Tuyển";
-            this.JobVancanyCode.Name = "JobVancanyCode";
-            // 
-            // JobVancanyName
-            // 
-            this.JobVancanyName.DataPropertyName = "JobVancanyName";
-            this.JobVancanyName.HeaderText = "Tên Vị Trí Tuyển";
-            this.JobVancanyName.Name = "JobVancanyName";
-            // 
-            // DateStart
-            // 
-            this.DateStart.DataPropertyName = "DateStart";
-            this.DateStart.HeaderText = "Ngày đăng tuyển";
-            this.DateStart.Name = "DateStart";
-            // 
-            // DateEnd
-            // 
-            this.DateEnd.DataPropertyName = "DateEnd";
-            this.DateEnd.HeaderText = "Ngày kết thúc";
-            this.DateEnd.Name = "DateEnd";
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số Lượng";
-            this.Soluong.Name = "Soluong";
-            // 
-            // LevelInterview
-            // 
-            this.LevelInterview.DataPropertyName = "LevelInterview";
-            this.LevelInterview.HeaderText = "Số vòng phỏng vấn";
-            this.LevelInterview.Name = "LevelInterview";
-            // 
-            // KinhNghiem
-            // 
-            this.KinhNghiem.DataPropertyName = "experience";
-            this.KinhNghiem.HeaderText = "Kinh Nghiệm";
-            this.KinhNghiem.Name = "KinhNghiem";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "Gender";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.Name = "GioiTinh";
             // 
             // tabControl1
             // 
@@ -653,14 +585,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_Date;
         private System.Windows.Forms.DataGridView dgvJobVancany;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateEnd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LevelInterview;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KinhNghiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabNew;
         private System.Windows.Forms.Button btBack;
@@ -682,6 +606,5 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btNew;
-        private System.Windows.Forms.BindingSource jobVancanyBindingSource;
     }
 }
