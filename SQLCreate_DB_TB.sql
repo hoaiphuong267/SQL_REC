@@ -25,9 +25,6 @@ CREATE TABLE dbo.Register
 	Username NVARCHAR(150),
 	Password VARCHAR(50)
 );
-INSERT INTO dbo.Register VALUES (N'Hồ Hảo',N'Hớn',N'phuong.pham','123')
-INSERT INTO dbo.Register VALUES (N'Duong',N'1',N'linh.duong','123')
-INSERT INTO dbo.Register VALUES (N'Duong',N'2',N'nhu.hong','234')
 INSERT INTO dbo.Register VALUES (N'Duong',N'3',N'123','123')
 ----Nhan vien ---
 CREATE TABLE dbo.Profile
@@ -69,6 +66,7 @@ CREATE TABLE dbo.Candidate
 	Status VARCHAR(50),
 	isdelete  BIT DEFAULT ((0)),
 	JobVancanyID INT,
+	pic image,
 	FOREIGN KEY (JobVancanyID) REFERENCES dbo.JobVancany(JobVancanyID)
 
 );
