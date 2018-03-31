@@ -59,26 +59,38 @@ namespace Tuyendung
                 MessageBox.Show(ex.Message);
             }
         }
-        private void ketnoicsdl()
-        {
-            cnn.Open();
-            string sql = "select * from Candidate";
-            SqlCommand com = new SqlCommand(sql, cnn);
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            cnn.Close();
-            dgv_createCandidate.DataSource = dt;
-                      
-        }
+      
 
         private void Candidate1_Load(object sender, EventArgs e)
         {
-           // ketnoicsdl();
+
+            cnn.Open();
+            try
+            {
+                string strCmd = "select JobVancanyID,JobVancanyName from JobVancany";
+                SqlCommand cmd = new SqlCommand(strCmd, cnn);
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                cb_JobVancanyID1.DisplayMember = "JobVancanyName";
+                cb_JobVancanyID1.ValueMember = "JobVancanyID";
+                cb_JobVancanyID1.DataSource = dt;
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
-       
 
+        private void btDanhGia_Click(object sender, EventArgs e)
+        {
+            FilterCandidate fc = new FilterCandidate();
+            this.Hide();
+            fc.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -72,6 +72,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btNew = new System.Windows.Forms.Button();
+            this.CodeJobVancany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobVancanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LevelInterview = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.experience = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabJobVancacy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).BeginInit();
@@ -315,9 +323,18 @@
             // dgvJobVancany
             // 
             this.dgvJobVancany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJobVancany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodeJobVancany,
+            this.JobVancanyName,
+            this.DateStart,
+            this.DateEnd,
+            this.Soluong,
+            this.LevelInterview,
+            this.Gender,
+            this.experience});
             this.dgvJobVancany.Location = new System.Drawing.Point(104, 257);
             this.dgvJobVancany.Name = "dgvJobVancany";
-            this.dgvJobVancany.Size = new System.Drawing.Size(845, 251);
+            this.dgvJobVancany.Size = new System.Drawing.Size(841, 251);
             this.dgvJobVancany.TabIndex = 2;
             this.dgvJobVancany.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJobVancany_CellClick);
             this.dgvJobVancany.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvJobVancany_UserDeletingRow);
@@ -536,6 +553,54 @@
             this.btNew.UseVisualStyleBackColor = true;
             this.btNew.Click += new System.EventHandler(this.btNew_Click);
             // 
+            // CodeJobVancany
+            // 
+            this.CodeJobVancany.DataPropertyName = "CodeJobVancany";
+            this.CodeJobVancany.HeaderText = "Mã Vị Trí Tuyển";
+            this.CodeJobVancany.Name = "CodeJobVancany";
+            // 
+            // JobVancanyName
+            // 
+            this.JobVancanyName.DataPropertyName = "JobVancanyName";
+            this.JobVancanyName.HeaderText = "Tên Vị Trí Tuyển";
+            this.JobVancanyName.Name = "JobVancanyName";
+            // 
+            // DateStart
+            // 
+            this.DateStart.DataPropertyName = "DateStart";
+            this.DateStart.HeaderText = "Ngày Bắt Đầu";
+            this.DateStart.Name = "DateStart";
+            // 
+            // DateEnd
+            // 
+            this.DateEnd.DataPropertyName = "DateEnd";
+            this.DateEnd.HeaderText = "Ngày Kết thúc";
+            this.DateEnd.Name = "DateEnd";
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
+            // 
+            // LevelInterview
+            // 
+            this.LevelInterview.DataPropertyName = "LevelInterview";
+            this.LevelInterview.HeaderText = "Số Vòng tuyển";
+            this.LevelInterview.Name = "LevelInterview";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "Giới Tính";
+            this.Gender.Name = "Gender";
+            // 
+            // experience
+            // 
+            this.experience.DataPropertyName = "experience";
+            this.experience.HeaderText = "Kinh Nghiệm";
+            this.experience.Name = "experience";
+            // 
             // JobVancany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,5 +671,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btNew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodeJobVancany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LevelInterview;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn experience;
     }
 }

@@ -58,7 +58,7 @@ namespace Tuyendung
         }
         private void bt_Comeback_candidate_Click(object sender, EventArgs e)
         {
-            Candidate1 frmcc = new Candidate1();
+            Menu frmcc = new Menu();
             this.Hide();
             frmcc.ShowDialog();
             this.Close();

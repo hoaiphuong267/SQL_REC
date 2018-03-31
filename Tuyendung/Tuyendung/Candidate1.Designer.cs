@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_JobVancanyID1 = new System.Windows.Forms.ComboBox();
             this.cb_Gender1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btDanhGia = new System.Windows.Forms.Button();
             this.bt_Filter = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
             this.bt_addCandidate = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
             // 
             this.groupBox1.Controls.Add(this.cb_JobVancanyID1);
             this.groupBox1.Controls.Add(this.cb_Gender1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btDanhGia);
             this.groupBox1.Controls.Add(this.bt_Filter);
             this.groupBox1.Controls.Add(this.btDel);
             this.groupBox1.Controls.Add(this.bt_addCandidate);
@@ -110,17 +110,18 @@
             this.cb_Gender1.Size = new System.Drawing.Size(225, 31);
             this.cb_Gender1.TabIndex = 21;
             // 
-            // button2
+            // btDanhGia
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(513, 182);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 41);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Đánh giá";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btDanhGia.Image = ((System.Drawing.Image)(resources.GetObject("btDanhGia.Image")));
+            this.btDanhGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDanhGia.Location = new System.Drawing.Point(513, 182);
+            this.btDanhGia.Name = "btDanhGia";
+            this.btDanhGia.Size = new System.Drawing.Size(121, 41);
+            this.btDanhGia.TabIndex = 20;
+            this.btDanhGia.Text = "Đánh giá";
+            this.btDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btDanhGia.UseVisualStyleBackColor = true;
+            this.btDanhGia.Click += new System.EventHandler(this.btDanhGia_Click);
             // 
             // bt_Filter
             // 
@@ -353,7 +354,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btDanhGia;
         private System.Windows.Forms.DataGridView dgv_createCandidate;
         private System.Windows.Forms.DataGridViewTextBoxColumn CandidateName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodeCandidate;
