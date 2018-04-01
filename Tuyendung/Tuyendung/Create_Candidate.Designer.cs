@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_Language = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cb_Gender = new System.Windows.Forms.ComboBox();
+            this.cb_JobVancanyID = new System.Windows.Forms.ComboBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bt_Image = new System.Windows.Forms.Button();
@@ -45,10 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bt_Save = new System.Windows.Forms.Button();
             this.bt_Comeback_candidate = new System.Windows.Forms.Button();
-            this.cb_JobVancanyID = new System.Windows.Forms.ComboBox();
-            this.cb_Gender = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cb_Language = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,71 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo mới Hồ sơ ứng viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cb_Language
+            // 
+            this.cb_Language.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Language.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Language.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Language.FormattingEnabled = true;
+            this.cb_Language.Items.AddRange(new object[] {
+            "Anh văn bằng B",
+            "Anh văn bằng C",
+            "Toeic 300",
+            "Toeic 350",
+            "Toeic 400",
+            "Toeic 450",
+            "Toeic 500",
+            "Toeic 550",
+            "Toeic 600",
+            "Toeic 650",
+            "Toeic 700",
+            "Toeic 750",
+            "Toeic 800",
+            "Toeic 850",
+            "Toeic 900",
+            "Toeic 950",
+            "Tiếng Nhật B1",
+            "Tiếng Pháp"});
+            this.cb_Language.Location = new System.Drawing.Point(135, 292);
+            this.cb_Language.Name = "cb_Language";
+            this.cb_Language.Size = new System.Drawing.Size(224, 31);
+            this.cb_Language.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 295);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 23);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Ngoại ngữ";
+            // 
+            // cb_Gender
+            // 
+            this.cb_Gender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Gender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Gender.FormattingEnabled = true;
+            this.cb_Gender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.cb_Gender.Location = new System.Drawing.Point(136, 145);
+            this.cb_Gender.Name = "cb_Gender";
+            this.cb_Gender.Size = new System.Drawing.Size(224, 31);
+            this.cb_Gender.TabIndex = 25;
+            // 
+            // cb_JobVancanyID
+            // 
+            this.cb_JobVancanyID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_JobVancanyID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_JobVancanyID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_JobVancanyID.FormattingEnabled = true;
+            this.cb_JobVancanyID.Location = new System.Drawing.Point(135, 216);
+            this.cb_JobVancanyID.Name = "cb_JobVancanyID";
+            this.cb_JobVancanyID.Size = new System.Drawing.Size(224, 31);
+            this.cb_JobVancanyID.TabIndex = 24;
             // 
             // txt_Email
             // 
@@ -134,6 +199,7 @@
             // 
             this.dtime_DateOfbrith.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtime_DateOfbrith.Location = new System.Drawing.Point(135, 108);
+            this.dtime_DateOfbrith.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             this.dtime_DateOfbrith.Name = "dtime_DateOfbrith";
             this.dtime_DateOfbrith.Size = new System.Drawing.Size(156, 32);
             this.dtime_DateOfbrith.TabIndex = 10;
@@ -231,68 +297,6 @@
             this.bt_Comeback_candidate.Text = "Quay về ";
             this.bt_Comeback_candidate.UseVisualStyleBackColor = true;
             this.bt_Comeback_candidate.Click += new System.EventHandler(this.bt_Comeback_candidate_Click);
-            // 
-            // cb_JobVancanyID
-            // 
-            this.cb_JobVancanyID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cb_JobVancanyID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_JobVancanyID.FormattingEnabled = true;
-            this.cb_JobVancanyID.Location = new System.Drawing.Point(135, 216);
-            this.cb_JobVancanyID.Name = "cb_JobVancanyID";
-            this.cb_JobVancanyID.Size = new System.Drawing.Size(224, 31);
-            this.cb_JobVancanyID.TabIndex = 24;
-            // 
-            // cb_Gender
-            // 
-            this.cb_Gender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cb_Gender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_Gender.FormattingEnabled = true;
-            this.cb_Gender.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ",
-            "Khác"});
-            this.cb_Gender.Location = new System.Drawing.Point(136, 145);
-            this.cb_Gender.Name = "cb_Gender";
-            this.cb_Gender.Size = new System.Drawing.Size(224, 31);
-            this.cb_Gender.TabIndex = 25;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 295);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 23);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Ngoại ngữ";
-            // 
-            // cb_Language
-            // 
-            this.cb_Language.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cb_Language.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_Language.FormattingEnabled = true;
-            this.cb_Language.Items.AddRange(new object[] {
-            "Anh văn bằng B",
-            "Anh văn bằng C",
-            "Toeic 300",
-            "Toeic 350",
-            "Toeic 400",
-            "Toeic 450",
-            "Toeic 500",
-            "Toeic 550",
-            "Toeic 600",
-            "Toeic 650",
-            "Toeic 700",
-            "Toeic 750",
-            "Toeic 800",
-            "Toeic 850",
-            "Toeic 900",
-            "Toeic 950",
-            "Tiếng Nhật B1",
-            "Tiếng Pháp"});
-            this.cb_Language.Location = new System.Drawing.Point(135, 292);
-            this.cb_Language.Name = "cb_Language";
-            this.cb_Language.Size = new System.Drawing.Size(224, 31);
-            this.cb_Language.TabIndex = 27;
             // 
             // Create_Candidate
             // 

@@ -76,6 +76,17 @@ namespace Tuyendung
             }
         }
 
+        private void bt_Interview_Click(object sender, EventArgs e)
+        {
+            this.panel3.Controls.Clear();
+            Interview_Creation frmJobVancacy = new Interview_Creation();
+            frmJobVancacy.TopLevel = false;
+            panel3.Controls.Add(frmJobVancacy);
+            frmJobVancacy.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frmJobVancacy.Dock = DockStyle.Fill;
+            frmJobVancacy.Show();
+        }
+
       
     }
 }

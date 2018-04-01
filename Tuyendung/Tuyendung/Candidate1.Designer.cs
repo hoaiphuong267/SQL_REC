@@ -30,9 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Candidate1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cb_JobVancanyID1 = new System.Windows.Forms.ComboBox();
+            this.cb_Gender1 = new System.Windows.Forms.ComboBox();
+            this.btDanhGia = new System.Windows.Forms.Button();
             this.bt_Filter = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
             this.bt_addCandidate = new System.Windows.Forms.Button();
             this.txt_Phone1 = new System.Windows.Forms.TextBox();
             this.dt_DateOfBirth1 = new System.Windows.Forms.DateTimePicker();
@@ -54,8 +56,6 @@
             this.CandidateHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobVancanyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cb_Gender1 = new System.Windows.Forms.ComboBox();
-            this.cb_JobVancanyID1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_createCandidate)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +64,9 @@
             // 
             this.groupBox1.Controls.Add(this.cb_JobVancanyID1);
             this.groupBox1.Controls.Add(this.cb_Gender1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btDanhGia);
             this.groupBox1.Controls.Add(this.bt_Filter);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btDel);
             this.groupBox1.Controls.Add(this.bt_addCandidate);
             this.groupBox1.Controls.Add(this.txt_Phone1);
             this.groupBox1.Controls.Add(this.dt_DateOfBirth1);
@@ -87,17 +87,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hồ sơ ứng viên";
             // 
-            // button2
+            // cb_JobVancanyID1
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(513, 182);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 41);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Đánh giá";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.cb_JobVancanyID1.FormattingEnabled = true;
+            this.cb_JobVancanyID1.Location = new System.Drawing.Point(532, 109);
+            this.cb_JobVancanyID1.Name = "cb_JobVancanyID1";
+            this.cb_JobVancanyID1.Size = new System.Drawing.Size(222, 31);
+            this.cb_JobVancanyID1.TabIndex = 22;
+            // 
+            // cb_Gender1
+            // 
+            this.cb_Gender1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Gender1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Gender1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Gender1.FormattingEnabled = true;
+            this.cb_Gender1.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ ",
+            "Khác"});
+            this.cb_Gender1.Location = new System.Drawing.Point(530, 36);
+            this.cb_Gender1.Name = "cb_Gender1";
+            this.cb_Gender1.Size = new System.Drawing.Size(225, 31);
+            this.cb_Gender1.TabIndex = 21;
+            // 
+            // btDanhGia
+            // 
+            this.btDanhGia.Image = ((System.Drawing.Image)(resources.GetObject("btDanhGia.Image")));
+            this.btDanhGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDanhGia.Location = new System.Drawing.Point(513, 182);
+            this.btDanhGia.Name = "btDanhGia";
+            this.btDanhGia.Size = new System.Drawing.Size(121, 41);
+            this.btDanhGia.TabIndex = 20;
+            this.btDanhGia.Text = "Đánh giá";
+            this.btDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btDanhGia.UseVisualStyleBackColor = true;
+            this.btDanhGia.Click += new System.EventHandler(this.btDanhGia_Click);
             // 
             // bt_Filter
             // 
@@ -112,18 +136,18 @@
             this.bt_Filter.UseVisualStyleBackColor = true;
             this.bt_Filter.Click += new System.EventHandler(this.bt_Filter_Click);
             // 
-            // button1
+            // btDel
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(259, 182);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(121, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btDel.Image = ((System.Drawing.Image)(resources.GetObject("btDel.Image")));
+            this.btDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDel.Location = new System.Drawing.Point(259, 182);
+            this.btDel.Name = "btDel";
+            this.btDel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btDel.Size = new System.Drawing.Size(121, 41);
+            this.btDel.TabIndex = 16;
+            this.btDel.Text = "Xóa";
+            this.btDel.UseVisualStyleBackColor = true;
             // 
             // bt_addCandidate
             // 
@@ -151,6 +175,7 @@
             // 
             this.dt_DateOfBirth1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dt_DateOfBirth1.Location = new System.Drawing.Point(135, 112);
+            this.dt_DateOfBirth1.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             this.dt_DateOfBirth1.Name = "dt_DateOfBirth1";
             this.dt_DateOfBirth1.Size = new System.Drawing.Size(131, 32);
             this.dt_DateOfBirth1.TabIndex = 10;
@@ -296,28 +321,6 @@
             this.Status.HeaderText = "Trạng thái";
             this.Status.Name = "Status";
             // 
-            // cb_Gender1
-            // 
-            this.cb_Gender1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cb_Gender1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_Gender1.FormattingEnabled = true;
-            this.cb_Gender1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ ",
-            "Khác"});
-            this.cb_Gender1.Location = new System.Drawing.Point(530, 36);
-            this.cb_Gender1.Name = "cb_Gender1";
-            this.cb_Gender1.Size = new System.Drawing.Size(225, 31);
-            this.cb_Gender1.TabIndex = 21;
-            // 
-            // cb_JobVancanyID1
-            // 
-            this.cb_JobVancanyID1.FormattingEnabled = true;
-            this.cb_JobVancanyID1.Location = new System.Drawing.Point(532, 109);
-            this.cb_JobVancanyID1.Name = "cb_JobVancanyID1";
-            this.cb_JobVancanyID1.Size = new System.Drawing.Size(222, 31);
-            this.cb_JobVancanyID1.TabIndex = 22;
-            // 
             // Candidate1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,7 +342,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bt_Filter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btDel;
         private System.Windows.Forms.Button bt_addCandidate;
         private System.Windows.Forms.TextBox txt_Phone1;
         private System.Windows.Forms.DateTimePicker dt_DateOfBirth1;
@@ -351,7 +354,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btDanhGia;
         private System.Windows.Forms.DataGridView dgv_createCandidate;
         private System.Windows.Forms.DataGridViewTextBoxColumn CandidateName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodeCandidate;

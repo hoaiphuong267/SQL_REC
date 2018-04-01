@@ -15,7 +15,10 @@ namespace Tuyendung
 {
     public partial class Create_Candidate : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
+        
+        // SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        //SqlConnection cnn = new SqlConnection(@"Data Source = .;Initial Catalog=QLTD;Integrated Security=True");
         string file = "";   
         public Create_Candidate()
         {
@@ -58,7 +61,7 @@ namespace Tuyendung
         }
         private void bt_Comeback_candidate_Click(object sender, EventArgs e)
         {
-            Candidate1 frmcc = new Candidate1();
+            Menu frmcc = new Menu();
             this.Hide();
             frmcc.ShowDialog();
             this.Close();
@@ -81,7 +84,7 @@ namespace Tuyendung
             {
                 if (c is TextBox || c is ComboBox && (pic_1.Image != null))
                 {
-                    c.Text = "";
+                    c.Text = "";                   
                     //pic_1.Image.Dispose();
                     pic_1.Image = null;
                 }

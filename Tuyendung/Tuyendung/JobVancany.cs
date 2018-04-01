@@ -13,7 +13,10 @@ namespace Tuyendung
 {
     public partial class JobVancany : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
+        
+        //SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        //SqlConnection cnn = new SqlConnection(@"Data Source = .;Initial Catalog=QLTD;Integrated Security=True");
         //DataTable dt;
         public JobVancany()
         {
@@ -23,7 +26,7 @@ namespace Tuyendung
         private void ketnoicsdl()
         {
             cnn.Open();
-            string sql = "select CodeJobVancany, JobVancanyName,DateStart, DateEnd, Soluong ,LevelInterview ,experience,Gender from JobVancany"; 
+            string sql = "select CodeJobVancany, JobVancanyName,DateStart, DateEnd, Soluong ,LevelInterview ,experience,Gender from JobVancany where isdelete = '0'"; 
             SqlCommand com = new SqlCommand(sql, cnn); 
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -70,7 +73,7 @@ namespace Tuyendung
         private void btnEdit_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', experience='" + txtKN.Text + "', Gender='" + cbGT.Text + "' WHERE JobVancanyID= '" + txtMVTT.Text + "'";
+            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', experience='" + txtKN.Text + "', Gender='" + cbGT.Text + "' WHERE isdelete = '0'";
             SqlCommand cmd = new SqlCommand(ins1, cnn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Sửa Thành Cong");
@@ -86,16 +89,12 @@ namespace Tuyendung
                 DialogResult result = MessageBox.Show("Bạn muốn xóa?", "Yes or No", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("select CodeJobVancany, JobVancanyName, DateStart, DateEnd, Soluong, LevelInterview, experience, Gender from JobVancany WHERE isdelete = '0'",cnn);
-                    SqlDataAdapter DA = new SqlDataAdapter(cmd);
-                    SqlCommandBuilder BD = new SqlCommandBuilder(DA);
-                    SqlCommand ODel = new SqlCommand("UPDATE JobVancany SET isdelete = '1' WHERE CodeJobVancany='" + txtMVTT.Text + "' ",cnn);
-                    DA.UpdateCommand = ODel;
-//DA.Update(dt);
+                    string ins = "UPDATE JobVancany SET isdelete = '1' WHERE CodeJobVancany='" + txtMVTT.Text + "' ";
+                    SqlCommand cmd = new SqlCommand(ins, cnn);
+                    cmd.ExecuteNonQuery();
                     MessageBox.Show("Xóa Thành Cong");
                     cnn.Close();
-                   
-                    //ketnoicsdl();
+                    ketnoicsdl();
                 }
             }
             catch (Exception ex)
@@ -109,14 +108,14 @@ namespace Tuyendung
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            //cnn.Open();
-            var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE 1=1");
+            cnn.Open();
+            var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE isdelete = '0'");
             if (!string.IsNullOrEmpty(txtTenVT.Text))
                 sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
-            if (!string.IsNullOrEmpty(dtDateStart.Text))
-                sb.Append(" AND DateStart >=" + dtDateStart.Value.ToString("MM/dd/yyyy") + "");
-            if (!string.IsNullOrEmpty(dtDateEnd.Text))
-                sb.Append(" AND DateEnd <" + dtDateEnd.Value.ToString("MM/dd/yyyy") + "");
+            //if (!string.IsNullOrEmpty(dtDateStart.Text))
+            //    sb.Append(" AND DateStart >=" + dtDateStart.Value.ToString("MM/dd/yyyy") + "");
+            //if (!string.IsNullOrEmpty(dtDateEnd.Text))
+            //    sb.Append(" AND DateEnd <" + dtDateEnd.Value.ToString("MM/dd/yyyy") + "");
             if (!string.IsNullOrEmpty(txtSoluong.Text))
                 sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
             if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))
@@ -129,22 +128,21 @@ namespace Tuyendung
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 dgvJobVancany.DataSource = ds.Tables[0];
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            //var controls = new[] { txtTenVT, dtDateStart, dtDateEnd, txtSoluong, txt_city, txt_state, txt_PinCode };
+          
 
         }
 
 
         private void dgvJobVancany_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            e.Cancel = true;
-            e.Row.Visible = false;
-            //((JobVancany)e.Row.DataBoundItem).isDeleted = true;
+           
         }
 
         private void btNew_Click(object sender, EventArgs e)
