@@ -67,6 +67,7 @@
             this.bt_Interview.TabIndex = 2;
             this.bt_Interview.Text = "Phỏng vấn";
             this.bt_Interview.UseVisualStyleBackColor = true;
+            this.bt_Interview.Click += new System.EventHandler(this.bt_Interview_Click);
             // 
             // btnJobVancany
             // 

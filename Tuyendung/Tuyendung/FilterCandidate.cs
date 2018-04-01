@@ -13,7 +13,9 @@ namespace Tuyendung
 {
     public partial class FilterCandidate : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
+        
+        //SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
         public FilterCandidate()
         {
             InitializeComponent();
