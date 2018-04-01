@@ -15,7 +15,8 @@ namespace Tuyendung
 {
     public partial class Create_Candidate : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        // SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source = .;Initial Catalog=QLTD;Integrated Security=True");
         string file = "";   
         public Create_Candidate()
         {
@@ -81,7 +82,7 @@ namespace Tuyendung
             {
                 if (c is TextBox || c is ComboBox && (pic_1.Image != null))
                 {
-                    c.Text = "";
+                    c.Text = "";                   
                     //pic_1.Image.Dispose();
                     pic_1.Image = null;
                 }

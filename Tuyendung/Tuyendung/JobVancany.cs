@@ -13,7 +13,8 @@ namespace Tuyendung
 {
     public partial class JobVancany : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        //SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source = .;Initial Catalog=QLTD;Integrated Security=True");
         //DataTable dt;
         public JobVancany()
         {

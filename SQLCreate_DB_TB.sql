@@ -11,9 +11,7 @@ DROP DATABASE QLTD
 GO
 CREATE DATABASE QLTD
 GO
-
 ----====Create Table=====-----
-
 USE QLTD
 GO
 ----dang ky---
@@ -35,7 +33,6 @@ CREATE TABLE dbo.Profile
 	DateBrith DATE,
 	StatusHire VARCHAR(50),
 );
-
 ----yeu cau tuyen dung----
 CREATE TABLE dbo.JobVancany
 (
@@ -48,10 +45,8 @@ CREATE TABLE dbo.JobVancany
 	LevelInterview INT,
 	Gender NVARCHAR(10),
 	experience INT,
-	isdelete  BIT DEFAULT ((0)),
-	
+	isdelete  BIT DEFAULT ((0)),	
 );
-
 -----Ho so ung vien----
 CREATE TABLE dbo.Candidate
 (
@@ -63,14 +58,12 @@ CREATE TABLE dbo.Candidate
 	Phone NVARCHAR(500),
 	Email NVARCHAR(500),
 	CandidateHistory NVARCHAR(250),
-	Status VARCHAR(50),
+	Status VARCHAR(50) DEFAULT 'E_NEW',
 	isdelete  BIT DEFAULT ((0)),
 	JobVancanyID INT,
 	pic image,
 	FOREIGN KEY (JobVancanyID) REFERENCES dbo.JobVancany(JobVancanyID)
-
 );
-
 ----Lịch sử tuyển dụng----
 CREATE	TABLE dbo.Rec_RecruitmentHistory
 (
