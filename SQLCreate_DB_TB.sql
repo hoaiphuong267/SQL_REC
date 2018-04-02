@@ -111,7 +111,7 @@ CREATE TABLE dbo.Interview
 	InterviewerName1 nvarchar(50), Result1 INT,
 	InterviewerName2 nvarchar(50), Result2 INT,
 	InterviewerName3 nvarchar(50), Result3 INT,
-	InterviewDate date, InterviewTime time
+	InterviewDate date, InterviewTime nvarchar(20)
 	--Comment NVARCHAR(200),
 	--ResultInterview NVARCHAR(50)
 	--StatusInterview VARCHAR(50),
