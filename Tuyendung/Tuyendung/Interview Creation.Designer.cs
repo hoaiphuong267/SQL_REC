@@ -39,7 +39,6 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtInterviewerNo1 = new System.Windows.Forms.TextBox();
             this.txtInterviewerNo3 = new System.Windows.Forms.TextBox();
             this.txtInterviewerNo2 = new System.Windows.Forms.TextBox();
@@ -61,11 +60,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtCanidateID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtJobVancany = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpInterviewDate = new System.Windows.Forms.DateTimePicker();
             this.btCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbMinutes = new System.Windows.Forms.ComboBox();
+            this.cbHours = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInterview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -193,20 +195,13 @@
             this.checkBox1.Text = "Pass";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(560, 249);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(114, 20);
-            this.dateTimePicker1.TabIndex = 56;
-            // 
             // txtInterviewerNo1
             // 
             this.txtInterviewerNo1.Location = new System.Drawing.Point(198, 133);
             this.txtInterviewerNo1.Name = "txtInterviewerNo1";
             this.txtInterviewerNo1.Size = new System.Drawing.Size(198, 20);
             this.txtInterviewerNo1.TabIndex = 55;
+            this.txtInterviewerNo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanidateName_KeyPress);
             // 
             // txtInterviewerNo3
             // 
@@ -214,6 +209,7 @@
             this.txtInterviewerNo3.Name = "txtInterviewerNo3";
             this.txtInterviewerNo3.Size = new System.Drawing.Size(198, 20);
             this.txtInterviewerNo3.TabIndex = 54;
+            this.txtInterviewerNo3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanidateName_KeyPress);
             // 
             // txtInterviewerNo2
             // 
@@ -221,6 +217,7 @@
             this.txtInterviewerNo2.Name = "txtInterviewerNo2";
             this.txtInterviewerNo2.Size = new System.Drawing.Size(198, 20);
             this.txtInterviewerNo2.TabIndex = 53;
+            this.txtInterviewerNo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanidateName_KeyPress);
             // 
             // txtCanidateName
             // 
@@ -228,6 +225,7 @@
             this.txtCanidateName.Name = "txtCanidateName";
             this.txtCanidateName.Size = new System.Drawing.Size(198, 20);
             this.txtCanidateName.TabIndex = 52;
+            this.txtCanidateName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanidateName_KeyPress);
             // 
             // dgvInterview
             // 
@@ -296,11 +294,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(428, 252);
+            this.label10.Location = new System.Drawing.Point(429, 248);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 13);
+            this.label10.Size = new System.Drawing.Size(121, 13);
             this.label10.TabIndex = 44;
-            this.label10.Text = "Giờ bắt đầu Phỏng vấn";
+            this.label10.Text = "Giờ bắt đầu Phỏng vấn:";
             // 
             // label4
             // 
@@ -355,6 +353,7 @@
             this.txtInterviewID.Name = "txtInterviewID";
             this.txtInterviewID.Size = new System.Drawing.Size(198, 20);
             this.txtInterviewID.TabIndex = 52;
+            this.txtInterviewID.Text = "Số tự động cập nhật";
             // 
             // label11
             // 
@@ -371,6 +370,7 @@
             this.txtCanidateID.Name = "txtCanidateID";
             this.txtCanidateID.Size = new System.Drawing.Size(198, 20);
             this.txtCanidateID.TabIndex = 52;
+            this.txtCanidateID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanidateID_KeyPress);
             // 
             // label12
             // 
@@ -381,12 +381,13 @@
             this.label12.TabIndex = 41;
             this.label12.Text = "Vị trí Ứng Tuyển";
             // 
-            // textBox1
+            // txtJobVancany
             // 
-            this.textBox1.Location = new System.Drawing.Point(562, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 20);
-            this.textBox1.TabIndex = 52;
+            this.txtJobVancany.Location = new System.Drawing.Point(562, 101);
+            this.txtJobVancany.Name = "txtJobVancany";
+            this.txtJobVancany.Size = new System.Drawing.Size(198, 20);
+            this.txtJobVancany.TabIndex = 52;
+            this.txtJobVancany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanidateName_KeyPress);
             // 
             // label13
             // 
@@ -397,13 +398,13 @@
             this.label13.TabIndex = 44;
             this.label13.Text = "Ngày hẹn phỏng vấn";
             // 
-            // dateTimePicker2
+            // dtpInterviewDate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(198, 245);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(199, 20);
-            this.dateTimePicker2.TabIndex = 56;
+            this.dtpInterviewDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInterviewDate.Location = new System.Drawing.Point(238, 245);
+            this.dtpInterviewDate.Name = "dtpInterviewDate";
+            this.dtpInterviewDate.Size = new System.Drawing.Size(105, 20);
+            this.dtpInterviewDate.TabIndex = 56;
             // 
             // btCancel
             // 
@@ -420,21 +421,123 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(611, 240);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 25);
+            this.label15.TabIndex = 60;
+            this.label15.Text = ":";
+            // 
+            // cbMinutes
+            // 
+            this.cbMinutes.FormattingEnabled = true;
+            this.cbMinutes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60"});
+            this.cbMinutes.Location = new System.Drawing.Point(635, 244);
+            this.cbMinutes.Name = "cbMinutes";
+            this.cbMinutes.Size = new System.Drawing.Size(54, 21);
+            this.cbMinutes.TabIndex = 61;
+            // 
+            // cbHours
+            // 
+            this.cbHours.FormattingEnabled = true;
+            this.cbHours.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbHours.Location = new System.Drawing.Point(551, 244);
+            this.cbHours.Name = "cbHours";
+            this.cbHours.Size = new System.Drawing.Size(54, 21);
+            this.cbHours.TabIndex = 61;
+            // 
             // Interview_Creation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 480);
+            this.Controls.Add(this.cbHours);
+            this.Controls.Add(this.cbMinutes);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpInterviewDate);
             this.Controls.Add(this.txtInterviewerNo1);
             this.Controls.Add(this.txtInterviewerNo3);
             this.Controls.Add(this.txtInterviewerNo2);
             this.Controls.Add(this.txtInterviewID);
             this.Controls.Add(this.txtCanidateID);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtJobVancany);
             this.Controls.Add(this.txtCanidateName);
             this.Controls.Add(this.dgvInterview);
             this.Controls.Add(this.btCreate);
@@ -476,7 +579,6 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtInterviewerNo1;
         private System.Windows.Forms.TextBox txtInterviewerNo3;
         private System.Windows.Forms.TextBox txtInterviewerNo2;
@@ -498,11 +600,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtCanidateID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtJobVancany;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpInterviewDate;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cbHours;
+        private System.Windows.Forms.ComboBox cbMinutes;
 
     }
 }
