@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtsearch = new System.Windows.Forms.TextBox();
-            this.cbJobID = new System.Windows.Forms.ComboBox();
             this.bTSearch = new System.Windows.Forms.Button();
             this.tabFilter = new System.Windows.Forms.TabControl();
             this.tabDS = new System.Windows.Forms.TabPage();
@@ -63,6 +61,9 @@
             this.CandidateHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btFilterCandidate = new System.Windows.Forms.Button();
+            this.dtp_FromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ToDate = new System.Windows.Forms.DateTimePicker();
+            this.cb_Text = new System.Windows.Forms.ComboBox();
             this.tabFilter.SuspendLayout();
             this.tabDS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSChoPV)).BeginInit();
@@ -71,29 +72,6 @@
             this.tabDSKDat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKDat)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtsearch
-            // 
-            this.txtsearch.Location = new System.Drawing.Point(322, 26);
-            this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(253, 20);
-            this.txtsearch.TabIndex = 31;
-            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
-            // 
-            // cbJobID
-            // 
-            this.cbJobID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbJobID.FormattingEnabled = true;
-            this.cbJobID.Items.AddRange(new object[] {
-            "Mã ứng viên",
-            "Tên ứng viên",
-            "Giới Tính",
-            "Ngôn Ngữ",
-            "Vị Trí Tuyển dụng"});
-            this.cbJobID.Location = new System.Drawing.Point(86, 27);
-            this.cbJobID.Name = "cbJobID";
-            this.cbJobID.Size = new System.Drawing.Size(206, 21);
-            this.cbJobID.TabIndex = 30;
             // 
             // bTSearch
             // 
@@ -346,13 +324,38 @@
             this.btFilterCandidate.Text = "Lọc";
             this.btFilterCandidate.UseVisualStyleBackColor = true;
             // 
+            // dtp_FromDate
+            // 
+            this.dtp_FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_FromDate.Location = new System.Drawing.Point(192, 72);
+            this.dtp_FromDate.Name = "dtp_FromDate";
+            this.dtp_FromDate.Size = new System.Drawing.Size(120, 20);
+            this.dtp_FromDate.TabIndex = 32;
+            // 
+            // dtp_ToDate
+            // 
+            this.dtp_ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ToDate.Location = new System.Drawing.Point(318, 72);
+            this.dtp_ToDate.Name = "dtp_ToDate";
+            this.dtp_ToDate.Size = new System.Drawing.Size(120, 20);
+            this.dtp_ToDate.TabIndex = 31;
+            // 
+            // cb_Text
+            // 
+            this.cb_Text.FormattingEnabled = true;
+            this.cb_Text.Location = new System.Drawing.Point(193, 27);
+            this.cb_Text.Name = "cb_Text";
+            this.cb_Text.Size = new System.Drawing.Size(269, 21);
+            this.cb_Text.TabIndex = 30;
+            // 
             // FilterCandidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 478);
-            this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.cbJobID);
+            this.Controls.Add(this.dtp_FromDate);
+            this.Controls.Add(this.dtp_ToDate);
+            this.Controls.Add(this.cb_Text);
             this.Controls.Add(this.bTSearch);
             this.Controls.Add(this.tabFilter);
             this.Controls.Add(this.btFilterCandidate);
@@ -367,13 +370,10 @@
             this.tabDSKDat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKDat)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.ComboBox cbJobID;
         private System.Windows.Forms.Button bTSearch;
         private System.Windows.Forms.TabControl tabFilter;
         private System.Windows.Forms.TabPage tabDS;
@@ -407,5 +407,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CandidateHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.Button btFilterCandidate;
+        private System.Windows.Forms.DateTimePicker dtp_FromDate;
+        private System.Windows.Forms.DateTimePicker dtp_ToDate;
+        private System.Windows.Forms.ComboBox cb_Text;
     }
 }

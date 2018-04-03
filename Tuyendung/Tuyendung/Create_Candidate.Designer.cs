@@ -194,6 +194,8 @@
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(225, 32);
             this.txt_Phone.TabIndex = 12;
+            this.txt_Phone.TextChanged += new System.EventHandler(this.txt_Phone_TextChanged);
+            this.txt_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Phone_KeyPress);
             // 
             // dtime_DateOfbrith
             // 

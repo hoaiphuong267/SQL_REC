@@ -100,27 +100,35 @@ namespace Tuyendung
         private void bt_Save_Click(object sender, EventArgs e)
         {
             //cnn.Open();
-            try
+            if (txt_CandidateName.Text == String.Empty || txt_CodeCandidate.Text == String.Empty || dtime_DateOfbrith.Text == String.Empty || cb_Gender.Text == String.Empty || txt_Phone.Text == String.Empty || txt_Email.Text == String.Empty || cb_Language.Text == String.Empty )
             {
-                cnn.Open();
-                byte[] image = null;
-                FileStream str = new FileStream(file, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(str);
-                image = brs.ReadBytes((int)str.Length);
-                string ins = "INSERT INTO Candidate(CandidateName,CodeCandidate,DateBirthday,Gender,Phone,Email,CandidateHistory,JobVancanyID,pic) VALUES ('" + txt_CandidateName.Text + "','" + txt_CodeCandidate.Text + "','" + dtime_DateOfbrith.Value + "','" + cb_Gender.Text + "','" + txt_Phone.Text + "','" + txt_Email.Text + "','" + cb_Language.Text + "','" + Convert.ToInt32(cb_JobVancanyID.SelectedValue) + "',@image)";
-                SqlCommand cmd = new SqlCommand(ins, cnn);
-                cmd.Parameters.Add(new SqlParameter("@image", image));
-                //cmd.CommandType = CommandType.Text;             
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Thành Cong");
-                cnn.Close();
-                ClearAllText(this);
+                MessageBox.Show("All fields are required!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Thao tác không thành công");
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    cnn.Open();
+                    byte[] image = null;
+                    FileStream str = new FileStream(file, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(str);
+                    image = brs.ReadBytes((int)str.Length);
+                    string ins = "INSERT INTO Candidate(CandidateName,CodeCandidate,DateBirthday,Gender,Phone,Email,CandidateHistory,JobVancanyID,pic) VALUES ('" + txt_CandidateName.Text.Trim() + "','" + txt_CodeCandidate.Text.Replace(" ", String.Empty) + "','" + dtime_DateOfbrith.Value + "','" + cb_Gender.Text + "','" + txt_Phone.Text.Replace(" ", String.Empty) + "','" + txt_Email.Text.Replace(" ", String.Empty) + "','" + cb_Language.Text + "','" + Convert.ToInt32(cb_JobVancanyID.SelectedValue) + "',@image)";
+                    SqlCommand cmd = new SqlCommand(ins, cnn);
+                    cmd.Parameters.Add(new SqlParameter("@image", image));
+                    //cmd.CommandType = CommandType.Text;             
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm Thành Cong");
+                    cnn.Close();
+                    ClearAllText(this);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thao tác không thành công");
+                    MessageBox.Show(ex.Message);
+                }
             }
+
         }
         private void txt_JobVancancyID_TextChanged(object sender, EventArgs e)
         {
@@ -148,6 +156,24 @@ namespace Tuyendung
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_Phone_TextChanged(object sender, EventArgs e)
+        {
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Phone.Text, " ^[0-9]"))
+            {
+                txt_Phone.Text = "";
+            }
+        }
+
+        private void txt_Phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
