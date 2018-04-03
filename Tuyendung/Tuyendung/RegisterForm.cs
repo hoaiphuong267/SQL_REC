@@ -28,20 +28,28 @@ namespace Tuyendung
             emp.EmployeeLastName = txtLastName.Text;
             emp.EmployeeUsername = txtUsername.Text;
             emp.EmployeePassword = txtPassword.Text;
-
-            kayit = emp.saveEmployee();
-
-            if (kayit == false)
+            if (txtUsername.Text == String.Empty || txtFirstName.Text == String.Empty || txtLastName.Text == String.Empty || txtPassword.Text.Trim() == String.Empty || txtPassword2.Text.Trim() == String.Empty)
             {
-                MessageBox.Show("Username is used");
+                MessageBox.Show("All fields are required!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (txtPassword.Text == txtPassword2.Text)
-                    MessageBox.Show("Registration successful");
+
+                kayit = emp.saveEmployee();
+
+                if (kayit == false)
+                {
+                    MessageBox.Show("Username is used");
+                }
                 else
-                    MessageBox.Show("Passwords are different");
+                {
+                    if (txtPassword.Text.Trim() == txtPassword2.Text.Trim())
+                        MessageBox.Show("Registration successful");
+                    else
+                        MessageBox.Show("Passwords are different");
+                }
             }
+
 
             txtFirstName.Text = "";
             txtLastName.Text = "";
@@ -58,6 +66,39 @@ namespace Tuyendung
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+        }
+       
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtFirstName.Text, " [^\x20-\xaf]+"))
+            {
+                txtFirstName.Text = "";
+            }
+        }
+
+        private void txtFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtLastName.Text, " [^\x20-\xaf]+"))
+            {
+                txtLastName.Text = "";
+            }
+        }
+
+        private void txtLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
         private void bt_BackLogin_Click(object sender, EventArgs e)
         {

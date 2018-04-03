@@ -36,7 +36,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtMVTT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtKN = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoVongTuyen = new System.Windows.Forms.TextBox();
             this.txtSoluong = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.txtTenVT = new System.Windows.Forms.TextBox();
             this.dtDateStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,7 +57,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodeJob = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtexp = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSoVong = new System.Windows.Forms.TextBox();
             this.txtSL = new System.Windows.Forms.TextBox();
@@ -72,6 +69,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btNew = new System.Windows.Forms.Button();
+            this.cb_Language = new System.Windows.Forms.ComboBox();
+            this.cb_Language1 = new System.Windows.Forms.ComboBox();
             this.CodeJobVancany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobVancanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +78,7 @@
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LevelInterview = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.experience = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CandidateHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabJobVancacy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobVancany)).BeginInit();
@@ -102,13 +101,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_Language);
             this.groupBox1.Controls.Add(this.cbGT);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnDel);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.txtMVTT);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtKN);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtSoVongTuyen);
             this.groupBox1.Controls.Add(this.txtSoluong);
@@ -117,7 +116,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnTimKiem);
-            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.txtTenVT);
             this.groupBox1.Controls.Add(this.dtDateStart);
             this.groupBox1.Controls.Add(this.label1);
@@ -135,12 +133,14 @@
             this.cbGT.AutoCompleteCustomSource.AddRange(new string[] {
             "Nam",
             "Nữ"});
-            this.cbGT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbGT.FormattingEnabled = true;
             this.cbGT.Items.AddRange(new object[] {
             "Nam",
-            "Nu"});
+            "Nu",
+            "Nam,Nu"});
             this.cbGT.Location = new System.Drawing.Point(479, 169);
             this.cbGT.Name = "cbGT";
             this.cbGT.Size = new System.Drawing.Size(173, 31);
@@ -193,22 +193,15 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Mã Vị Trí Tuyển";
             // 
-            // txtKN
-            // 
-            this.txtKN.Location = new System.Drawing.Point(479, 64);
-            this.txtKN.Name = "txtKN";
-            this.txtKN.Size = new System.Drawing.Size(173, 32);
-            this.txtKN.TabIndex = 14;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(346, 70);
+            this.label6.Location = new System.Drawing.Point(658, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 19);
+            this.label6.Size = new System.Drawing.Size(75, 19);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Kinh Nghiệm";
+            this.label6.Text = "Ngôn Ngữ";
             // 
             // txtSoVongTuyen
             // 
@@ -272,22 +265,12 @@
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(517, 209);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(105, 30);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Tạo mới";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // txtTenVT
             // 
             this.txtTenVT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtTenVT.Location = new System.Drawing.Point(774, 57);
+            this.txtTenVT.Location = new System.Drawing.Point(479, 64);
             this.txtTenVT.Name = "txtTenVT";
-            this.txtTenVT.Size = new System.Drawing.Size(190, 32);
+            this.txtTenVT.Size = new System.Drawing.Size(173, 32);
             this.txtTenVT.TabIndex = 4;
             // 
             // dtDateStart
@@ -304,7 +287,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(658, 63);
+            this.label1.Location = new System.Drawing.Point(336, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 19);
             this.label1.TabIndex = 0;
@@ -331,7 +314,7 @@
             this.Soluong,
             this.LevelInterview,
             this.Gender,
-            this.experience});
+            this.CandidateHistory});
             this.dgvJobVancany.Location = new System.Drawing.Point(104, 257);
             this.dgvJobVancany.Name = "dgvJobVancany";
             this.dgvJobVancany.Size = new System.Drawing.Size(841, 251);
@@ -375,11 +358,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cb_Language1);
             this.groupBox2.Controls.Add(this.cbGioiTinh);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtCodeJob);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtexp);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtSoVong);
             this.groupBox2.Controls.Add(this.txtSL);
@@ -402,10 +385,13 @@
             // cbGioiTinh
             // 
             this.cbGioiTinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGioiTinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbGioiTinh.FormattingEnabled = true;
             this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
-            "Nu"});
+            "Nu",
+            "Nam,Nu"});
             this.cbGioiTinh.Location = new System.Drawing.Point(479, 169);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(173, 31);
@@ -438,22 +424,15 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Mã Vị Trí Tuyển";
             // 
-            // txtexp
-            // 
-            this.txtexp.Location = new System.Drawing.Point(479, 64);
-            this.txtexp.Name = "txtexp";
-            this.txtexp.Size = new System.Drawing.Size(173, 32);
-            this.txtexp.TabIndex = 14;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(346, 70);
+            this.label10.Location = new System.Drawing.Point(658, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 19);
+            this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 13;
-            this.label10.Text = "Kinh Nghiệm";
+            this.label10.Text = "Ngôn Ngữ";
             // 
             // txtSoVong
             // 
@@ -509,9 +488,9 @@
             // txtName
             // 
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtName.Location = new System.Drawing.Point(774, 57);
+            this.txtName.Location = new System.Drawing.Point(479, 64);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(190, 32);
+            this.txtName.Size = new System.Drawing.Size(173, 32);
             this.txtName.TabIndex = 4;
             // 
             // dtStart
@@ -526,7 +505,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(658, 63);
+            this.label14.Location = new System.Drawing.Point(336, 70);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 19);
             this.label14.TabIndex = 0;
@@ -552,6 +531,65 @@
             this.btNew.Text = "Tạo mới";
             this.btNew.UseVisualStyleBackColor = true;
             this.btNew.Click += new System.EventHandler(this.btNew_Click);
+            // 
+            // cb_Language
+            // 
+            this.cb_Language.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Language.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Language.FormattingEnabled = true;
+            this.cb_Language.Items.AddRange(new object[] {
+            "Anh văn bằng B",
+            "Anh văn bằng C",
+            "Toeic 300",
+            "Toeic 350",
+            "Toeic 400",
+            "Toeic 450",
+            "Toeic 500",
+            "Toeic 550",
+            "Toeic 600",
+            "Toeic 650",
+            "Toeic 700",
+            "Toeic 750",
+            "Toeic 800",
+            "Toeic 850",
+            "Toeic 900",
+            "Toeic 950",
+            "Tiếng Nhật B1",
+            "Tiếng Pháp"});
+            this.cb_Language.Location = new System.Drawing.Point(774, 64);
+            this.cb_Language.Name = "cb_Language";
+            this.cb_Language.Size = new System.Drawing.Size(194, 31);
+            this.cb_Language.TabIndex = 28;
+            // 
+            // cb_Language1
+            // 
+            this.cb_Language1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Language1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Language1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Language1.FormattingEnabled = true;
+            this.cb_Language1.Items.AddRange(new object[] {
+            "Anh văn bằng B",
+            "Anh văn bằng C",
+            "Toeic 300",
+            "Toeic 350",
+            "Toeic 400",
+            "Toeic 450",
+            "Toeic 500",
+            "Toeic 550",
+            "Toeic 600",
+            "Toeic 650",
+            "Toeic 700",
+            "Toeic 750",
+            "Toeic 800",
+            "Toeic 850",
+            "Toeic 900",
+            "Toeic 950",
+            "Tiếng Nhật B1",
+            "Tiếng Pháp"});
+            this.cb_Language1.Location = new System.Drawing.Point(772, 64);
+            this.cb_Language1.Name = "cb_Language1";
+            this.cb_Language1.Size = new System.Drawing.Size(194, 31);
+            this.cb_Language1.TabIndex = 29;
             // 
             // CodeJobVancany
             // 
@@ -595,11 +633,11 @@
             this.Gender.HeaderText = "Giới Tính";
             this.Gender.Name = "Gender";
             // 
-            // experience
+            // CandidateHistory
             // 
-            this.experience.DataPropertyName = "experience";
-            this.experience.HeaderText = "Kinh Nghiệm";
-            this.experience.Name = "experience";
+            this.CandidateHistory.DataPropertyName = "CandidateHistory";
+            this.CandidateHistory.HeaderText = "Ngôn Ngữ";
+            this.CandidateHistory.Name = "CandidateHistory";
             // 
             // JobVancany
             // 
@@ -635,7 +673,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtMVTT;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtKN;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSoVongTuyen;
         private System.Windows.Forms.TextBox txtSoluong;
@@ -644,7 +681,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtTenVT;
         private System.Windows.Forms.DateTimePicker dtDateStart;
         private System.Windows.Forms.Label label1;
@@ -658,7 +694,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodeJob;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtexp;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSoVong;
         private System.Windows.Forms.TextBox txtSL;
@@ -671,6 +706,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btNew;
+        private System.Windows.Forms.ComboBox cb_Language;
+        private System.Windows.Forms.ComboBox cb_Language1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodeJobVancany;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobVancanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
@@ -678,6 +715,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn LevelInterview;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn experience;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CandidateHistory;
     }
 }

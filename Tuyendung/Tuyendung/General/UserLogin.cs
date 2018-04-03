@@ -10,9 +10,9 @@ namespace Tuyendung.General
 {
     public class UserLogin
     {
-        SqlConnection myDBconnection = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
+        //SqlConnection myDBconnection = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
         
-        //SqlConnection myDBconnection = new SqlConnection(@"Data Source = .\SQLExpress; Initial Catalog = QLTD;  Integrated Security = True;");
+        SqlConnection myDBconnection = new SqlConnection(@"Data Source = .\SQLExpress; Initial Catalog = QLTD;  Integrated Security = True;");
        // SqlConnection myDBconnection = new SqlConnection(@"Data Source = .; Initial Catalog = QLTD;  Integrated Security = True;");
 
         private static UserLogin _userLogin;

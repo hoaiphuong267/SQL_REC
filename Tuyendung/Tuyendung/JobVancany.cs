@@ -13,9 +13,9 @@ namespace Tuyendung
 {
     public partial class JobVancany : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
+       // SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
         
-        //SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
         //SqlConnection cnn = new SqlConnection(@"Data Source = .;Initial Catalog=QLTD;Integrated Security=True");
         //DataTable dt;
         public JobVancany()
@@ -26,7 +26,7 @@ namespace Tuyendung
         private void ketnoicsdl()
         {
             cnn.Open();
-            string sql = "select CodeJobVancany, JobVancanyName,DateStart, DateEnd, Soluong ,LevelInterview ,experience,Gender from JobVancany where isdelete = '0'"; 
+            string sql = "select CodeJobVancany, JobVancanyName,DateStart, DateEnd, Soluong ,LevelInterview ,CandidateHistory,Gender from JobVancany where isdelete = '0'"; 
             SqlCommand com = new SqlCommand(sql, cnn); 
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -63,7 +63,7 @@ namespace Tuyendung
                 dtDateEnd.Value = Convert.ToDateTime(row.Cells[3].Value.ToString());
                 txtSoluong.Text = row.Cells[4].Value.ToString();
                 txtSoVongTuyen.Text = row.Cells[5].Value.ToString();
-                txtKN.Text = row.Cells[6].Value.ToString();
+                cb_Language.Text = row.Cells[6].Value.ToString();
                 cbGT.Text = row.Cells[7].Value.ToString();
 
 
@@ -73,12 +73,26 @@ namespace Tuyendung
         private void btnEdit_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', experience='" + txtKN.Text + "', Gender='" + cbGT.Text + "' WHERE isdelete = '0'";
+            string ins1 = "UPDATE JobVancany SET  CodeJobVancany='" + txtMVTT.Text + "',DateStart='" + dtDateStart.Value + "', DateEnd='" + dtDateEnd.Value + "',Soluong = '" + txtSoluong.Text + "', LevelInterview='" + txtSoVongTuyen.Text + "', JobVancanyName='" + txtTenVT.Text + "', CandidateHistory ='" + cb_Language.Text + "', Gender='" + cbGT.Text + "' WHERE isdelete = '0'";
             SqlCommand cmd = new SqlCommand(ins1, cnn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Sửa Thành Cong");
             cnn.Close();
             ketnoicsdl();
+        }
+
+        private void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox || c is ComboBox)
+                {
+                    c.Text = "";
+
+                }
+                else
+                    ClearAllText(c);
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -95,6 +109,7 @@ namespace Tuyendung
                     MessageBox.Show("Xóa Thành Cong");
                     cnn.Close();
                     ketnoicsdl();
+                    ClearAllText(this);
                 }
             }
             catch (Exception ex)
@@ -108,27 +123,30 @@ namespace Tuyendung
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            cnn.Open();
-            var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE isdelete = '0'");
-            if (!string.IsNullOrEmpty(txtTenVT.Text))
-                sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
-            //if (!string.IsNullOrEmpty(dtDateStart.Text))
-            //    sb.Append(" AND DateStart >=" + dtDateStart.Value.ToString("MM/dd/yyyy") + "");
-            //if (!string.IsNullOrEmpty(dtDateEnd.Text))
-            //    sb.Append(" AND DateEnd <" + dtDateEnd.Value.ToString("MM/dd/yyyy") + "");
-            if (!string.IsNullOrEmpty(txtSoluong.Text))
-                sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
-            if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))
-                sb.Append(" AND LevelInterview like '%" + txtSoVongTuyen.Text + "%'");
-            if (!string.IsNullOrEmpty(cbGT.Text))
-                sb.Append(" AND Gender like '%" + cbGT.Text + "%'");
+            
             try
             {
+                cnn.Open();
+                var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE isdelete = '0'");
+                if (!string.IsNullOrEmpty(txtTenVT.Text))
+                    sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
+                /*if (!string.IsNullOrEmpty(dtDateStart.Value.ToString()))
+                    sb.Append(" AND DateStart <=" + Convert.ToDateTime(dtDateEnd.Value.ToString("MM/dd/yyyy")) + "");
+                if (!string.IsNullOrEmpty(dtDateEnd.Value.ToString()))
+                    sb.Append(" AND DateEnd >=" + Convert.ToDateTime(dtDateStart.Value.ToString("MM/dd/yyyy")) + "");*/
+                if (!string.IsNullOrEmpty(txtSoluong.Text))
+                    sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
+                if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))
+                    sb.Append(" AND LevelInterview like '%" + txtSoVongTuyen.Text + "%'");
+                if (!string.IsNullOrEmpty(cbGT.Text))
+                    sb.Append(" AND Gender like '%" + cbGT.Text + "%'");
+
                 SqlDataAdapter da = new SqlDataAdapter(sb.ToString(), cnn);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
+                cnn.Close();
                 dgvJobVancany.DataSource = ds.Tables[0];
-
+                ClearAllText(this);
             }
             catch (Exception ex)
             {
@@ -148,12 +166,33 @@ namespace Tuyendung
         private void btNew_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,experience,Gender ) VALUES ('" + txtCodeJob.Text + "','" + dtStart.Value + "','" + dtEnd.Value + "','" + txtSL.Text + "','" + txtSoVong.Text + "','" + txtName.Text + "','" + txtexp.Text + "','" + cbGioiTinh.Text + "')";
-            SqlCommand cmd = new SqlCommand(ins, cnn);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Thêm Thành Cong");
-            cnn.Close();
-            ketnoicsdl();
+            //SqlCommand check_User_Name = new SqlCommand("SELECT * FROM JobVancany WHERE (CodeJobVancany= @CodeJobVancany)", cnn);
+            //check_User_Name.Parameters.AddWithValue("@CodeJobVancany", txtCodeJob.Text);
+            //int UserExist = (int)check_User_Name.ExecuteScalar();
+            //if (UserExist > 0)
+            //{
+            //    MessageBox.Show("Vi Tri Tuyen da ton tai");
+
+            //}
+            //else
+            //{
+            try
+            {
+
+                string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,CandidateHistory,Gender ) VALUES ('" + txtCodeJob.Text + "','" + dtStart.Value + "','" + dtEnd.Value + "','" + txtSL.Text + "','" + txtSoVong.Text + "','" + txtName.Text + "','" + cb_Language1.Text + "','" + cbGioiTinh.Text + "')";
+                SqlCommand cmd1 = new SqlCommand(ins, cnn);
+                cmd1.ExecuteNonQuery();
+                MessageBox.Show("Thêm Thành Cong");
+                cnn.Close();
+                ketnoicsdl();
+                ClearAllText(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            //}
         }
 
         private void btBack_Click(object sender, EventArgs e)

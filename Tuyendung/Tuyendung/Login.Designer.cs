@@ -110,7 +110,7 @@
             this.txtPassword1.Name = "txtPassword1";
             this.txtPassword1.PasswordChar = '*';
             this.txtPassword1.Size = new System.Drawing.Size(227, 26);
-            this.txtPassword1.TabIndex = 5;
+            this.txtPassword1.TabIndex = 1;
             // 
             // txtUsername1
             // 
@@ -120,7 +120,7 @@
             this.txtUsername1.Location = new System.Drawing.Point(131, 13);
             this.txtUsername1.Name = "txtUsername1";
             this.txtUsername1.Size = new System.Drawing.Size(227, 26);
-            this.txtUsername1.TabIndex = 4;
+            this.txtUsername1.TabIndex = 0;
             this.txtUsername1.TextChanged += new System.EventHandler(this.txtUsername1_TextChanged);
             // 
             // Login
@@ -135,7 +135,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
-            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

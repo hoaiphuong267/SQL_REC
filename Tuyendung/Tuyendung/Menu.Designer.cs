@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btLogout = new System.Windows.Forms.Button();
             this.bt_Interview = new System.Windows.Forms.Button();
             this.btnJobVancany = new System.Windows.Forms.Button();
             this.bt_Candidate = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel2.Controls.Add(this.btLogout);
             this.panel2.Controls.Add(this.bt_Interview);
             this.panel2.Controls.Add(this.btnJobVancany);
             this.panel2.Controls.Add(this.bt_Candidate);
@@ -54,6 +56,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(273, 588);
             this.panel2.TabIndex = 1;
+            // 
+            // btLogout
+            // 
+            this.btLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btLogout.BackgroundImage")));
+            this.btLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btLogout.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btLogout.Location = new System.Drawing.Point(28, 258);
+            this.btLogout.Name = "btLogout";
+            this.btLogout.Size = new System.Drawing.Size(227, 65);
+            this.btLogout.TabIndex = 3;
+            this.btLogout.Text = "Logout";
+            this.btLogout.UseVisualStyleBackColor = true;
+            this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
             // bt_Interview
             // 
@@ -78,7 +94,7 @@
             this.btnJobVancany.Location = new System.Drawing.Point(28, 36);
             this.btnJobVancany.Name = "btnJobVancany";
             this.btnJobVancany.Size = new System.Drawing.Size(227, 65);
-            this.btnJobVancany.TabIndex = 2;
+            this.btnJobVancany.TabIndex = 0;
             this.btnJobVancany.Text = "Yêu cầu Tuyển dụng";
             this.btnJobVancany.UseVisualStyleBackColor = true;
             this.btnJobVancany.Click += new System.EventHandler(this.btnJobVancany_Click);
@@ -92,7 +108,7 @@
             this.bt_Candidate.Location = new System.Drawing.Point(28, 107);
             this.bt_Candidate.Name = "bt_Candidate";
             this.bt_Candidate.Size = new System.Drawing.Size(227, 65);
-            this.bt_Candidate.TabIndex = 2;
+            this.bt_Candidate.TabIndex = 1;
             this.bt_Candidate.Text = "Hồ sơ ứng viên";
             this.bt_Candidate.UseVisualStyleBackColor = true;
             this.bt_Candidate.Click += new System.EventHandler(this.bt_Candidate_Click);
@@ -176,5 +192,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btLogout;
     }
 }

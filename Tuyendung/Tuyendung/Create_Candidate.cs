@@ -15,11 +15,11 @@ namespace Tuyendung
 {
     public partial class Create_Candidate : Form
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
-        
-        // SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
+        //SqlConnection cnn = new SqlConnection(@"Data Source = CHAOS-LORD\CHAOS;Initial Catalog=QLTD;Integrated Security=True");
+
+        SqlConnection cnn = new SqlConnection(@"Data Source = .\SQLExpress;Initial Catalog=QLTD;Integrated Security=True");
         //SqlConnection cnn = new SqlConnection(@"Data Source = .;Initial Catalog=QLTD;Integrated Security=True");
-        string file = "";   
+        string file = "";
         public Create_Candidate()
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace Tuyendung
         private void groupBox1_Enter(object sender, EventArgs e)
         {
         }
+        //button mo anh
         private void bt_Image_Click(object sender, EventArgs e)
         {
             try
@@ -38,7 +39,7 @@ namespace Tuyendung
                     + "bmp file (*.bmp)|*.bmp|"
                     + "png file (*.png)|*.png|"
                     + "All file (*.*)|*.*";
-                if(dlg.ShowDialog() == DialogResult.OK)
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     //string filechoose = dlg.FileName;
                     //pic_1.Image = Image.FromFile(dlg.FileName);
@@ -55,9 +56,8 @@ namespace Tuyendung
         private void bt_Filter_Click(object sender, EventArgs e)
         {
         }
-
         private void button1_Click(object sender, EventArgs e)
-        {  
+        {
         }
         private void bt_Comeback_candidate_Click(object sender, EventArgs e)
         {
@@ -66,6 +66,7 @@ namespace Tuyendung
             frmcc.ShowDialog();
             this.Close();
         }
+        //load du lieu len datagritview
         private void ketnoicsdl()
         {
             cnn.Open();
@@ -82,16 +83,20 @@ namespace Tuyendung
         {
             foreach (Control c in con.Controls)
             {
-                if (c is TextBox || c is ComboBox && (pic_1.Image != null))
+                if (c is TextBox || c is ComboBox && c is DateTimePicker && (pic_1.Image != null))
                 {
-                    c.Text = "";                   
-                    //pic_1.Image.Dispose();
+                    c.Text = "";
+                    cb_Gender.SelectedIndex = -1;
+                    cb_Language.SelectedIndex = -1;
+                    cb_JobVancanyID.SelectedIndex = -1;
+                    //this.dtime_DateOfbrith.CustomFormat = null;
                     pic_1.Image = null;
                 }
                 else
                     ClearAllText(c);
             }
         }
+        //hàm lưu
         private void bt_Save_Click(object sender, EventArgs e)
         {
             //cnn.Open();
@@ -99,13 +104,12 @@ namespace Tuyendung
             {
                 cnn.Open();
                 byte[] image = null;
-                FileStream str = new FileStream(file,FileMode.Open,FileAccess.Read);
+                FileStream str = new FileStream(file, FileMode.Open, FileAccess.Read);
                 BinaryReader brs = new BinaryReader(str);
                 image = brs.ReadBytes((int)str.Length);
-
                 string ins = "INSERT INTO Candidate(CandidateName,CodeCandidate,DateBirthday,Gender,Phone,Email,CandidateHistory,JobVancanyID,pic) VALUES ('" + txt_CandidateName.Text + "','" + txt_CodeCandidate.Text + "','" + dtime_DateOfbrith.Value + "','" + cb_Gender.Text + "','" + txt_Phone.Text + "','" + txt_Email.Text + "','" + cb_Language.Text + "','" + Convert.ToInt32(cb_JobVancanyID.SelectedValue) + "',@image)";
                 SqlCommand cmd = new SqlCommand(ins, cnn);
-                cmd.Parameters.Add(new SqlParameter("@image",image));
+                cmd.Parameters.Add(new SqlParameter("@image", image));
                 //cmd.CommandType = CommandType.Text;             
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm Thành Cong");
@@ -116,19 +120,20 @@ namespace Tuyendung
             {
                 MessageBox.Show("Thao tác không thành công");
                 MessageBox.Show(ex.Message);
-            }        
+            }
         }
         private void txt_JobVancancyID_TextChanged(object sender, EventArgs e)
         {
         }
         private void pic_1_Click(object sender, EventArgs e)
         {
-        }       
+        }
+        //ham load vi tri tuyen
         private void Create_Candidate_Load(object sender, EventArgs e)
         {
             cnn.Open();
             try
-            {           
+            {
                 string strCmd = "select JobVancanyID,JobVancanyName from JobVancany";
                 SqlCommand cmd = new SqlCommand(strCmd, cnn);
                 SqlDataReader reader;
@@ -144,6 +149,6 @@ namespace Tuyendung
             {
                 MessageBox.Show(ex.Message);
             }
-        }     
+        }
     }
 }

@@ -44,7 +44,7 @@ CREATE TABLE dbo.JobVancany
 	Soluong INT,
 	LevelInterview INT,
 	Gender NVARCHAR(10),
-	experience INT,
+	CandidateHistory NVARCHAR(250),
 	isdelete  BIT DEFAULT ((0)),	
 );
 -----Ho so ung vien----

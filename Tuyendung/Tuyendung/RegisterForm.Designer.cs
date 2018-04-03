@@ -97,7 +97,7 @@
             this.bt_BackLogin.Location = new System.Drawing.Point(211, 273);
             this.bt_BackLogin.Name = "bt_BackLogin";
             this.bt_BackLogin.Size = new System.Drawing.Size(186, 42);
-            this.bt_BackLogin.TabIndex = 21;
+            this.bt_BackLogin.TabIndex = 6;
             this.bt_BackLogin.Text = "Quay lại trang Login";
             this.bt_BackLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_BackLogin.UseVisualStyleBackColor = false;
@@ -132,7 +132,9 @@
             this.txtLastName.Location = new System.Drawing.Point(196, 91);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(187, 26);
-            this.txtLastName.TabIndex = 19;
+            this.txtLastName.TabIndex = 1;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
+            this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // pictureBox3
             // 
@@ -153,7 +155,7 @@
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.PasswordChar = '*';
             this.txtPassword2.Size = new System.Drawing.Size(189, 26);
-            this.txtPassword2.TabIndex = 16;
+            this.txtPassword2.TabIndex = 4;
             // 
             // label3
             // 
@@ -234,7 +236,7 @@
             this.btnRegister.Location = new System.Drawing.Point(19, 273);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(186, 42);
-            this.btnRegister.TabIndex = 1;
+            this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Khỏi tạo tài khoản";
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -247,7 +249,9 @@
             this.txtFirstName.Location = new System.Drawing.Point(194, 48);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(187, 26);
-            this.txtFirstName.TabIndex = 4;
+            this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
+            this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirstName_KeyPress);
             // 
             // txtUsername
             // 
@@ -256,7 +260,7 @@
             this.txtUsername.Location = new System.Drawing.Point(194, 139);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(187, 26);
-            this.txtUsername.TabIndex = 5;
+            this.txtUsername.TabIndex = 2;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
@@ -267,7 +271,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(187, 26);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TabIndex = 3;
             // 
             // label2
             // 
@@ -287,6 +291,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(526, 387);
             this.Controls.Add(this.gbRegister);
+            this.MaximizeBox = false;
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";

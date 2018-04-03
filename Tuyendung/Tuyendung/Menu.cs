@@ -87,6 +87,12 @@ namespace Tuyendung
             frmJobVancacy.Show();
         }
 
-      
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            Login LG = new Login();
+            this.Hide();
+            LG.ShowDialog();
+            this.Close();
+        }
     }
 }

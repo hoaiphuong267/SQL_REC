@@ -197,9 +197,9 @@
             // 
             // dtime_DateOfbrith
             // 
-            this.dtime_DateOfbrith.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtime_DateOfbrith.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtime_DateOfbrith.Location = new System.Drawing.Point(135, 108);
-            this.dtime_DateOfbrith.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
+            this.dtime_DateOfbrith.MinDate = new System.DateTime(1965, 1, 1, 0, 0, 0, 0);
             this.dtime_DateOfbrith.Name = "dtime_DateOfbrith";
             this.dtime_DateOfbrith.Size = new System.Drawing.Size(156, 32);
             this.dtime_DateOfbrith.TabIndex = 10;

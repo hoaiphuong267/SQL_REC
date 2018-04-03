@@ -99,7 +99,6 @@
             // 
             this.cb_Gender1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_Gender1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cb_Gender1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Gender1.FormattingEnabled = true;
             this.cb_Gender1.Items.AddRange(new object[] {
             "Nam",
@@ -148,6 +147,7 @@
             this.btDel.TabIndex = 16;
             this.btDel.Text = "Xóa";
             this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // bt_addCandidate
             // 
@@ -173,11 +173,11 @@
             // 
             // dt_DateOfBirth1
             // 
-            this.dt_DateOfBirth1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_DateOfBirth1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_DateOfBirth1.Location = new System.Drawing.Point(135, 112);
             this.dt_DateOfBirth1.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             this.dt_DateOfBirth1.Name = "dt_DateOfBirth1";
-            this.dt_DateOfBirth1.Size = new System.Drawing.Size(131, 32);
+            this.dt_DateOfBirth1.Size = new System.Drawing.Size(187, 32);
             this.dt_DateOfBirth1.TabIndex = 10;
             // 
             // txt_Code1
@@ -266,6 +266,7 @@
             this.dgv_createCandidate.Name = "dgv_createCandidate";
             this.dgv_createCandidate.Size = new System.Drawing.Size(943, 280);
             this.dgv_createCandidate.TabIndex = 2;
+            this.dgv_createCandidate.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_createCandidate_CellClick);
             // 
             // CandidateName
             // 
