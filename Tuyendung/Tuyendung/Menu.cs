@@ -67,13 +67,7 @@ namespace Tuyendung
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn muốn thoát khỏi màn hình ?",
-                                  "Thoát khỏi màn hình giao diện Menu",
-                                  MessageBoxButtons.YesNo,
-                                  MessageBoxIcon.Warning) == DialogResult.No)         
-            {
-                e.Cancel = true;
-            }
+
         }
 
         private void bt_Interview_Click(object sender, EventArgs e)

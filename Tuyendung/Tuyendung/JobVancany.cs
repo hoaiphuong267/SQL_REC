@@ -165,7 +165,7 @@ namespace Tuyendung
 
         private void btNew_Click(object sender, EventArgs e)
         {
-            cnn.Open();
+           
             //SqlCommand check_User_Name = new SqlCommand("SELECT * FROM JobVancany WHERE (CodeJobVancany= @CodeJobVancany)", cnn);
             //check_User_Name.Parameters.AddWithValue("@CodeJobVancany", txtCodeJob.Text);
             //int UserExist = (int)check_User_Name.ExecuteScalar();
@@ -176,22 +176,28 @@ namespace Tuyendung
             //}
             //else
             //{
-            try
+            if (txtCodeJob.Text == String.Empty || dtDateStart.Text == String.Empty || dtDateEnd.Text == String.Empty || txtSL.Text == String.Empty || txtSoVong.Text == String.Empty || txtName.Text == String.Empty || cb_Language1.Text == String.Empty || cbGioiTinh.Text == String.Empty)
             {
-
-                string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,CandidateHistory,Gender ) VALUES ('" + txtCodeJob.Text + "','" + dtStart.Value + "','" + dtEnd.Value + "','" + txtSL.Text + "','" + txtSoVong.Text + "','" + txtName.Text + "','" + cb_Language1.Text + "','" + cbGioiTinh.Text + "')";
-                SqlCommand cmd1 = new SqlCommand(ins, cnn);
-                cmd1.ExecuteNonQuery();
-                MessageBox.Show("Thêm Thành Cong");
-                cnn.Close();
-                ketnoicsdl();
-                ClearAllText(this);
+                MessageBox.Show("All fields are required!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    cnn.Open();
+                    string ins = "INSERT INTO JobVancany(CodeJobVancany,DateStart, DateEnd, Soluong ,LevelInterview , JobVancanyName,CandidateHistory,Gender ) VALUES ('" + txtCodeJob.Text + "','" + dtStart.Value + "','" + dtEnd.Value + "','" + txtSL.Text + "','" + txtSoVong.Text + "','" + txtName.Text + "','" + cb_Language1.Text + "','" + cbGioiTinh.Text + "')";
+                    SqlCommand cmd1 = new SqlCommand(ins, cnn);
+                    cmd1.ExecuteNonQuery();
+                    MessageBox.Show("Thêm Thành Cong");
+                    cnn.Close();
+                    ketnoicsdl();
+                    ClearAllText(this);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-
             //}
         }
 

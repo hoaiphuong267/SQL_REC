@@ -66,6 +66,12 @@
     <Compile Include="FilterCandidate.Designer.cs">
       <DependentUpon>FilterCandidate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="General\Employee.cs" />
     <Compile Include="General\UserLogin.cs" />
     <Compile Include="Interview Creation.cs">
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FilterCandidate.resx">
       <DependentUpon>FilterCandidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interview Creation.resx">
       <DependentUpon>Interview Creation.cs</DependentUpon>

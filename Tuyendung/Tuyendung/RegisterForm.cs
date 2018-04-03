@@ -107,5 +107,19 @@ namespace Tuyendung
             frm.ShowDialog();
             this.Close();
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                MessageBox.Show("Error no whitespaces");
+                e.Handled = true;
+            }
+        }
     }
 }
