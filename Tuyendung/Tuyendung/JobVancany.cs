@@ -107,7 +107,7 @@ namespace Tuyendung
                     SqlCommand cmd = new SqlCommand(ins, cnn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Xóa Thành Cong");
-                    cnn.Close();
+                    cnn.Close();    
                     ketnoicsdl();
                     ClearAllText(this);
                 }
@@ -116,6 +116,7 @@ namespace Tuyendung
             {
                 MessageBox.Show(ex.Message);
             }
+           
         }
         
            
@@ -130,10 +131,10 @@ namespace Tuyendung
                 var sb = new StringBuilder("select JobVancanyName,DateStart,DateEnd,Soluong,LevelInterview from JobVancany WHERE isdelete = '0'");
                 if (!string.IsNullOrEmpty(txtTenVT.Text))
                     sb.Append(" AND JobVancanyName like '%" + txtTenVT.Text + "%'");
-                /*if (!string.IsNullOrEmpty(dtDateStart.Value.ToString()))
-                    sb.Append(" AND DateStart <=" + Convert.ToDateTime(dtDateEnd.Value.ToString("MM/dd/yyyy")) + "");
-                if (!string.IsNullOrEmpty(dtDateEnd.Value.ToString()))
-                    sb.Append(" AND DateEnd >=" + Convert.ToDateTime(dtDateStart.Value.ToString("MM/dd/yyyy")) + "");*/
+                if (!string.IsNullOrEmpty(dtDateStart.Text))
+                    sb.Append(" AND DateStart <=" + Convert.ToDateTime(dtDateEnd.Text) + "");
+                if (!string.IsNullOrEmpty(dtDateEnd.Text))
+                    sb.Append(" AND DateEnd >=" + Convert.ToDateTime(dtDateStart.Text) + "");
                 if (!string.IsNullOrEmpty(txtSoluong.Text))
                     sb.Append(" AND Soluong like '%" + txtSoluong.Text + "%'");
                 if (!string.IsNullOrEmpty(txtSoVongTuyen.Text))

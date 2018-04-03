@@ -110,7 +110,10 @@ namespace Tuyendung
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtLastName.Text, " [^\x20-\xaf]+"))
+            {
+                txtLastName.Text = "";
+            }
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
